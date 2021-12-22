@@ -1,10 +1,10 @@
-This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2019.4.20)  22 DEC 2021 16:10
+This is e-upTeX, Version 3.14159265-p3.8.1-u1.23-180226-2.6 (utf8.uptex) (TeX Live 2018) (preloaded format=uplatex 2019.4.20)  22 DEC 2021 16:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**cv.tex
-(./cv.tex
+**cv_www.tex
+(./cv_www.tex
 pLaTeX2e <2018-12-01u02> (based on LaTeX2e <2018-12-01>)
 (/usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
 Document Class: jsarticle 2018/12/11 jsclasses (okumura, texjporg)
@@ -224,8 +224,8 @@ Package: pxjahyper 2018/07/15 v0.3d
 LaTeX Info: Composite with undeclared \u in encoding PD1 on input line 839.
 LaTeX Info: Composite with undeclared \H in encoding PD1 on input line 848.
 )
-(./cv.aux)
-\openout1 = `cv.aux'.
+(./cv_www.aux)
+\openout1 = `cv_www.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
 LaTeX Font Info:    ... okay on input line 32.
@@ -309,9 +309,9 @@ LaTeX Info: Redefining \ref on input line 32.
 LaTeX Info: Redefining \pageref on input line 32.
 LaTeX Info: Redefining \nameref on input line 32.
 
-(./cv.out) (./cv.out)
+(./cv_www.out) (./cv_www.out)
 \@outlinefile=\write3
-\openout3 = `cv.out'.
+\openout3 = `cv_www.out'.
 
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 (Font)              scaled to size 15.9785pt on input line 35.
@@ -325,6 +325,14 @@ LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
 (Font)              Font shape `JY2/gt/m/n' tried instead on input line 47.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 47.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 56.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 56.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 56.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 56.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 65.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
@@ -333,14 +341,6 @@ LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 65.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 65.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 67.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 67.
-LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 67.
-LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 67.
 LaTeX Font Info:    Font shape `JT2/gt/m/it' in size <10> not available
 (Font)              Font shape `JT2/gt/m/n' tried instead on input line 69.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
@@ -415,20 +415,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 107--115
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 238.
  [8]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 238.
- (./cv.aux)
+ (./cv_www.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 238.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 238.
-Package rerunfilecheck Info: File `cv.out' has not changed.
+Package rerunfilecheck Info: File `cv_www.out' has not changed.
 (rerunfilecheck)             Checksum: 05B9FF7757FE6A446D8F294B02146D28;54.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 238.
  ) 
 Here is how much of TeX's memory you used:
- 5729 strings out of 493215
- 83019 string characters out of 6144072
+ 5730 strings out of 493215
+ 83089 string characters out of 6144072
  186342 words of memory out of 5000000
- 9705 multiletter control sequences out of 15000+600000
+ 9706 multiletter control sequences out of 15000+600000
  10216 words of font info for 52 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 28i,9n,22p,867b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,9n,22p,871b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on cv.dvi (8 pages, 33084 bytes).
+Output written on cv_www.dvi (8 pages, 33216 bytes).
