@@ -1,14 +1,30 @@
 %%%%%%%%% JPS abstruct %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[uplatex, 12pt,a4paper]{jsarticle}
+\documentclass[uplatex, 11pt]{jsarticle}
+\special{papersize=210truemm,297truemm}
 
 %%%%%%%%% packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx} % Include figure files
 \usepackage{geometry} %余白設定用package
-\geometry{inner=3cm, outer=2cm}
+\geometry{inner=2cm, outer=2cm, top=2cm, bottom=2cm}
 \usepackage[dvipdfmx,bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue]{hyperref} %hyperref packageを使って目次にリンク(しおり)を貼る。
 \usepackage[dvipdfmx]{pxjahyper} %日本語文字化け防止
+\usepackage[normalem]{ulem} %下線引きたい
+
+\usepackage{multicol} %部分的に二段組
+\setlength{\columnsep}{-3.5cm} %二段組の幅調整
+
+\usepackage{otf} % 名前用フォント
 
 \pagestyle{empty}
+
+%enumerateで数字に丸印つける。
+\newcommand{\ctext}[1]{\ooalign{
+\hfil\resizebox{\width}{\height}{#1}\hfil
+\crcr
+\raise-.1mm\hbox{\Large$\bigcirc$}}}
+
+\newcommand{\comicneue}{\selectfont}
+\DeclareTextFontCommand{\textcomicneue}{\comicneue}
 
 % New environment for the long list
 \newenvironment{cvlist}{%
@@ -19,210 +35,319 @@
 
 %\cvitem{<dates>}{<title>}{<location>}{<description>}
 \newcommand{\cvitem}[4]{%
-	#1&\parbox[t]{0.83\textwidth}{%
-		\normalfont{#2}%
-		\hfill%
-		{\footnotesize#3}\\%
-		#4\vspace{\parsep}%
+#1&\parbox[t]{0.83\textwidth}{%
+	\normalfont{#2}%
+	\hfill%
+	{\footnotesize#3}\\%
+	#4\vspace{\parsep}%
 	}\\
 }
-
 
 %%%%%%%%% header %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \begin{center}
-{\LARGE 履歴書 }\\[14pt]
+\textcomicneue{\huge\textgt{履歴書}}\\[14pt]
 
-{\LARGE 武田　紘樹}\\[5pt]
-
-\date{\today}
+\textcomicneue{\Huge\textgt{武田　紘樹}}\\[5pt]
 
 \end{center}
+\date{\today}
 
-\vspace{10pt}
+\vspace{20pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{multicols}{2}
 \noindent 
 \textbf{住所:} 
-
-〒606-8502 京都市左京区北白川追分町\par
-京都大学理学部物理学第二教室天体核研究室\\
+〒606-8502 \\
+\noindent 
+京都市左京区北白川追分町\par
+\noindent 
+京都大学理学部物理学第二教室\\
+\noindent 
+天体核研究室\\
+\columnbreak
 
 \noindent 
-\textbf{電話番号:} +81-75-753-3872\\
-
+\textbf{電話番号:} +81-75-753-3876\\
 \noindent 
-\textbf{E-mail} takeda@tap.scphys.kyoto-u.ac.jp\\
-
+\textbf{E-mail:} takeda@tap.scphys.kyoto-u.ac.jp\\
 \noindent 
-\textbf{URL} https://hiroki-takeda.github.io/index.html\\
-
+\textbf{Webサイト:} https://hiroki-takeda.github.io/index.html\\
 \noindent 
-\textbf{生年月日:} 1993年10月5日\\
+\textbf{生年月日:} 1993年10月5日
+\end{multicols}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{学歴}
-
+\noindent
 \begin{cvlist} % Environment for a list with descriptions
 	%\cvitem{<dates>}{<title>}{<location>}{<description>}
-	\cvitem{2018-2021}{東京大学大学院理学系研究科物理学専攻博士課程}{}{\emph{Tests of Alternative Theories of Gravity through Gravitational-Wave\\ Polarizations}, 取得年月:  2021年3月}
-	\cvitem{2016-2018}{東京大学大学院理学系研究科物理学専攻修士課程}{}{\emph{Development of Monolithic Optical System for Lorentz Invariance Test},\\ 取得年月:  2018年3月}
-	\cvitem{2012-2016}{横浜国立大学理工学部数物・電子情報系学科物理工学EP}{}{\emph{Proposal of Rayleigh Scattering Length Measurement in Liquid Xenon},\\ 取得年月:  2016年3月}
+\cvitem{2018-2021}{東京大学大学院理学系研究科物理学専攻博士課程,}{}{\emph{Tests of Alternative Theories of Gravity through Gravitational-Wave Polarizations,} \\取得年月:  2021年3月.}\\
+\cvitem{2016-2018}{東京大学大学院理学系研究科物理学専攻修士課程,}{}{\emph{Development of Monolithic Optical System for Lorentz Invariance Test,}\\ 取得年月:  2018年3月.}\\
+\cvitem{2012-2016}{横浜国立大学理工学部数物・電子情報系学科物理工学EP,}{}{\emph{Proposal of Rayleigh Scattering Length Measurement in Liquid Xenon,}\\ 取得年月:  2016年3月.}
 \end{cvlist}
 
 \section*{職歴}
+\noindent
 \begin{cvlist} % Environment for a list with descriptions
 	%\cvitem{<dates>}{<title>}{<location>}{<description>}
-	\cvitem{2021-現在}{日本学術振興会特別研究員(PD)}{}{京都大学大学院理学研究科
-物理学・宇宙物理学専攻 物理第二分野}
-	\cvitem{2018-2021}{日本学術振興会特別研究員(DC1)}{}{東京大学大学院理学系研究科物理学専攻}
-	\cvitem{2016-2021}{Advanced Leading Graduate Course for Photon Science 生}{}{東京大学大学院理学系研究科物理学専攻}
+	\cvitem{2021-現在}{日本学術振興会特別研究員(PD),}{}{京都大学大学院理学研究科
+物理学・宇宙物理学専攻 物理第二分野.}\\
+	\cvitem{2018-2021}{日本学術振興会特別研究員(DC1),}{}{東京大学大学院理学系研究科物理学専攻.}\\
+	\cvitem{2016-2021}{Advanced Leading Graduate Course for Photon Science 生,}{}{東京大学大学院理学系研究科物理学専攻.}
 \end{cvlist}
 
 \section*{受賞歴}
+\noindent
 \begin{cvlist} % Environment for a list with descriptions
 	%\cvitem{<dates>}{<title>}{<location>}{<description>}
-	\cvitem{2021}{第76回年次大会（2021年）日本物理学会学生優秀発表賞}{}{}
-	\cvitem{2015}{横浜国立大学理工学部数物・電子情報系学科成績優秀賞}{}{}
-	\cvitem{2015}{横浜国立大学横浜物理工学会同窓会優秀賞}{}{}
-	\cvitem{2014}{横浜国立大学理工学部数物・電子情報系学科物理工学 EP I 実習優秀ポスター賞}{}{}
+	\cvitem{2021}{第76回年次大会（2021年）日本物理学会学生優秀発表賞.}{}{}
+	\cvitem{2015}{横浜国立大学理工学部数物・電子情報系学科成績優秀賞.}{}{}
+	\cvitem{2015}{横浜国立大学横浜物理工学会同窓会優秀賞.}{}{}
+	\cvitem{2014}{横浜国立大学理工学部数物・電子情報系学科物理工学EP I実習優秀ポスター賞.}{}{}
 \end{cvlist}
 
 \section*{助成金}
+\noindent
 \begin{cvlist} % Environment for a list with descriptions
 	%\cvitem{<dates>}{<title>}{<location>}{<description>}
-	\cvitem{2021-現在}{日本学術振興会特別研究員(PD)}{}{研究題目: コンパクト連星合体からの重力波偏極モード探査による強重力場での重力理論検証}
-	\cvitem{2018-2021}{日本学術振興会特別研究員(DC1)}{}{研究題目: 光リング共振器を用いた光子のローレンツ不変性検証}
+	\cvitem{2022-2026}{日本学術振興会 若手研究 研究代表者,}{}{研究題目: 重力波伝播過程の偏極モード探査による宇宙論的距離スケールでの重力理論の検証,\\ 総額360万円.}\\
+	\cvitem{2021-2024}{日本学術振興会特別研究員(PD)  特別研究員奨励費 研究代表者,}{}{研究題目: コンパクト連星合体からの重力波偏極モード探査による強重力場での重力理論検証,\\ 総額364万円.}\\
+	\cvitem{2018-2021}{日本学術振興会特別研究員(DC1)  特別研究員奨励費 研究代表者,}{}{研究題目: 光リング共振器を用いた光子のローレンツ不変性検証,\\ 総額280万円.}
 \end{cvlist}
 
 \section*{教育歴}
+\noindent
 \begin{cvlist} % Environment for a list with descriptions
 	%\cvitem{<dates>}{<title>}{<location>}{<description>}
-	\cvitem{2018-2019}{東京大学 理学部 物理学科 学部3年 「学生実験II(ブラウン運動)」TA}{}{}
-	\cvitem{2012-2016}{武蔵ゼミナール 進学教室スクール８教室　学習塾講師}{}{}
+	\cvitem{2022}{舞鶴工業高等専門学校 機械工学科 4年生 非常勤講師「物理学III(力学)」.}{}{}
+	\cvitem{2018-2019}{東京大学 理学部 物理学科 学部3年 「学生実験II(ブラウン運動)」TA.}{}{}
+	\cvitem{2012-2016}{武蔵ゼミナール 進学教室スクール８教室　学習塾講師.}{}{}
 \end{cvlist}
 
 \section*{所属団体}
+\noindent
 \begin{cvlist} % Environment for a list with descriptions
 	%\cvitem{<dates>}{<title>}{<location>}{<description>}
-	\cvitem{2020}{KAGRA Scientific Congress 学生代表}{}{}
-	\cvitem{2019-現在}{日本天文学会 会員}{}{}
-	\cvitem{2018-現在}{LISA Consortium メンバー}{}{}
-	\cvitem{2017-現在}{KAGRA Collaboration}{}{}
-	\cvitem{2016-現在}{日本物理学会 会員}{}{}
+	\cvitem{2020}{KAGRA Scientific Congress 学生代表.}{}{}
+	\cvitem{2019-現在}{日本天文学会 会員.}{}{}
+	\cvitem{2018-現在}{LISA Consortium メンバー.}{}{}
+	\cvitem{2017-現在}{KAGRA Collaboration.}{}{}
+	\cvitem{2016-現在}{日本物理学会 会員.}{}{}
 \end{cvlist}
 
-\section*{論文}
+\section*{指標}
+\noindent 
+\textbf{出版物:}  著書2(執筆中), 主著論文4報(引用64), 共著論文7報, コラボレーション論文46報,\\ \hspace{1.15cm} 合計59報(引用3964, h-index21, g-index56).\\
+
+\noindent 
+\textbf{講演:} 招待セミナー2. 国際会議: 口頭発表8, ポスター発表3. 国内会議: 口頭発表13. \\ \hspace{0.8cm}
+		 合計26. \\
+
+\section*{出版物}
+\subsection*{著書}
 \begin{enumerate}
-   \item Hiroki Takeda, Soichiro Morisaki, and Atsushi Nishizawa, "Scalar-tensor mixed polarization search of gravitational waves", (2021). (arXiv:2105.00253)
-   \item Hiroki Takeda, Soichiro Morisaki, and Atsushi Nishizawa, "Pure polarization test of GW170814 and GW170817 using waveforms consistent with modified theories of gravity", Physical Review D , American Physical Society, 103, 064037 (2021). (arXiv:2010.14538)
-   \item Koji Nagano, Hiroki Takeda, Yuta Michimura, Takashi Uchiyama, and Masaki Ando, "Demonstration of a dual-pass differential Fabry–Perot interferometer for future interferometric space gravitational wave antennas", Classical and Quantum Gravity, IOP Publishing, 38, 085018 (2021). (arXiv:2008.12462)
-\item Tomotada Akutsu, Fabián Erasmo Peña Arellano, Ayaka Shoda, Yoshinori Fujii, Koki Okutomi, Mark Andrew Barton, Ryutaro Takahashi, Kentaro Komori, Naoki Aritomi, Tomofumi Shimoda, Satoru Takano, Hiroki Takeda, Enzo Nicolas Tapia San Martin, Ryohei Kozu, Bungo Ikenoue, Yoshiyuki Obuchi, Mitsuhiro Fukushima, Yoichi Aso, Yuta Michimura, Osamu Miyakawa, and Masahiro Kamiizumi, "Compact integrated optical sensors and electromagnetic actuators for vibration isolation systems in the gravitational-wave detector KAGRA", Review of Scientific Instruments, American Institute of Physics, 91, 115001 (2020). (arXiv:2007.09571)
-\item Yuta Michimura, Kentaro Komori, Yutaro Enomoto, Koji Nagano, Atsushi Nishizawa, Eiichi Hirose, Matteo Leonardi, Eleonora Capocasa, Naoki Aritomi, Yuhang Zhao, Raffaele Flaminio, Takafumi Ushiba, Tomohiro Yamada, Li-Wei Wei, Hiroki Takeda, Satoshi Tanioka, Masaki Ando, Kazuhiro Yamamoto, Kazuhiro Hayama, Sadakazu Haino, and Kentaro Somiya "Prospects for improving the sensitivity of the cryogenic gravitational wave detector KAGRA", Physical Review D , American Physical Society, 102, 022008 (2020). (arXiv:2006.08970)
-\item Tomoya Kinugawa, Hiroki Takeda, and Hiroya Yamaguchi, "Probe for Type Ia supernova progenitor in decihertz gravitational wave astronomy ", (2019).\\ (arXiv:1910.01063)
-\item Hiroki Takeda, Atsushi Nishizawa, Yuta Michimura, Koji Nagano, Kentaro Komori, Masaki Ando, and Kazuhiro Hayama, "Prospects for gravitational-wave polarization tests from compact binary mergers with future ground-based detectors", Physical Review D , American Physical Society, 100, 042001 (2019). (arXiv:1904.09989)
-\item Hiroki Takeda, Atsushi Nishizawa, Yuta Michimura, Koji Nagano, Kentaro Komori, Masaki Ando, and Kazuhiro Hayama, " Polarization test of gravitational waves from compact binary coalescences",Physical Review D , American Physical Society, 98, 022008 (2018). (arXiv:1806.02182)
-\item Yuta Michimura, Kentaro Komori, Atsushi Nishizawa, Hiroki Takeda, Koji Nagano, Yutaro Enomoto, Kazuhiro Hayama, Kentaro Somiya, and Masaki Ando, " Particle swarm optimization of the sensitivity of cryogenic gravitational wave detector", Physical Review D , American Physical Society, 97, 122003, (2018). (arXiv: 1804.09894)
-\item Kentaro Komori, Yutaro Enomoto, Hiroki Takeda, Yuta Michimura, Kentaro Somiya, Masaki Ando, and Stefan W. Ballmer, "Direct Approach for the Fluctuation\\-Dissipation Theorem under Non-Equilibrium Steady-State Conditions", Physical Review D , American Physical Society, 97, 102001 (2018). (arXiv: 1803.00585)
-\item Yuta Michimura, Tomofumi Shimoda, Takahiro Miyamoto, Ayaka Shoda, Koki Okutomi, Yoshinori Fujii, Hiroki Tanaka, Mark A. Barton, Ryutaro Takahashi, Yoichi Aso, Tomotada Akutsu, Masaki Ando, Yutaro Enomoto, Raffaele Flaminio, Kazuhiro Hayama, Eiichi Hirose, Yuki Inoue, Takaaki Kajita, Masahiro Kamiizumi, Seiji Kawamura, Keiko Kokeyama, Kentaro Komori, Rahul Kumar, Osamu Miyakawa, Koji Nagano, Masayuki Nakano, Naoko Ohishi, Ching Pin Ooi, Fabián Erasmo Peña Arellano, Yoshio Saito, Katsuhiko Shimode, Kentaro Somiya, Hiroki Takeda, Takayuki Tomaru, Takashi Uchiyama, Takafumi Ushiba, Kazuhiro Yamamoto, Takaaki Yokozawa, and Hirotaka Yuzurihara, "Mirror actuation design for the interferometer control of the KAGRA gravitational wave telescope", Classical and Quantum Gravity, IOP Publishing, 34, 225001 (2017). (arXiv: 1709.02574)
+\item \uline{武田　紘樹}, "\emph{重力波を読み解く（仮）}", 技術評論社より2024年出版予定.
+
+\item \uline{武田　紘樹}, "\emph{宇宙の図鑑（仮）}", KADOKAWAより2023年出版予定.
 \end{enumerate}
 
-\section*{コラボレーション論文 \\(LIGO-Virgo-KAGRA, KAGRA, LISA, DECIGO)}
+\subsection*{論文}
+\uline{主要論文5点に丸印を付記}。
 \begin{enumerate}
+\setcounter{enumi}{2}
+\item Tomoya Kinugawa, \uline{Hiroki Takeda}, Ataru Tanikawa and Hiroya Yamaguchi, "\emph{Probe for Type Ia supernova progenitor in decihertz gravitational wave astronomy}", Astrophysical Journal, {\bf 938}, 52 (2022). (arXiv:1910.01063)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "Tests of General Relativity with GWTC-3", (2021). (arXiv:2112.06861)
+   \item[\ctext{4}.] \uline{Hiroki Takeda}, Soichiro Morisaki, and Atsushi Nishizawa,
+"\emph{Search for scalar-tensor mixed polarization modes of gravitational waves}",
+Physical Review D, American Physical Society, {\bf 105}, 084019 (2022).
+(arXiv:2105.00253)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "Search of the Early O3 LIGO Data for Continuous Gravitational Waves from the Cassiopeia A and Vela Jr. Supernova Remnants", (2021). (arXiv:2111.15116)
+   \item[\ctext{5}.] \uline{Hiroki Takeda}, Soichiro Morisaki, and Atsushi Nishizawa, "\emph{Pure polarization test of GW170814 and GW170817 using waveforms consistent with modified theories of gravity}", Physical Review D, American Physical Society, {\bf 103}, 064037 (2021). (arXiv:2010.14538)\\
+   
+ \setcounter{enumi}{5}
+   \item Koji Nagano, \uline{Hiroki Takeda}, Yuta Michimura, Takashi Uchiyama, and Masaki Ando, "\emph{Demonstration of a dual-pass differential Fabry-Perot interferometer for future interferometric space gravitational wave antennas}", Classical and Quantum Gravity, IOP Publishing, {\bf 38}, 085018 (2021). (arXiv:2008.12462)\\
+  
+\item Tomotada Akutsu, Fabi\UTF{00E1}n Erasmo Pe\UTF{00F1}a Arellano, Ayaka Shoda, Yoshinori Fujii, Koki Okutomi, Mark Andrew Barton, Ryutaro Takahashi, Kentaro Komori, Naoki Aritomi, Tomofumi Shimoda, Satoru Takano, \uline{Hiroki Takeda}, Enzo Nicolas Tapia San Martin, Ryohei Kozu, Bungo Ikenoue, Yoshiyuki Obuchi, Mitsuhiro Fukushima, Yoichi Aso, Yuta Michimura, Osamu Miyakawa, and Masahiro Kamiizumi, "\emph{Compact integrated optical sensors and electromagnetic actuators for vibration isolation systems in the gravitational-wave detector KAGRA}", Review of Scientific Instruments, American Institute of Physics, {\bf 91}, 115001 (2020). (arXiv:2007.09571)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "All-sky search for gravitational wave emission from scalar boson clouds around spinning black holes in LIGO O3 data", (2021). (arXiv:2111.15507)
+\item Yuta Michimura, Kentaro Komori, Yutaro Enomoto, Koji Nagano, Atsushi Nishizawa, Eiichi Hirose, Matteo Leonardi, Eleonora Capocasa, Naoki Aritomi, Yuhang Zhao, Raffaele Flaminio, Takafumi Ushiba, Tomohiro Yamada, Li-Wei Wei, \uline{Hiroki Takeda}, Satoshi Tanioka, Masaki Ando, Kazuhiro Yamamoto, Kazuhiro Hayama, Sadakazu Haino, and Kentaro Somiya "\emph{Prospects for improving the sensitivity of the cryogenic gravitational wave detector KAGRA}", Physical Review D , American Physical Society, {\bf 102}, 022008 (2020). (arXiv:2006.08970)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "Searches for Gravitational Waves from Known Pulsars at Two Harmonics in the Second and Third LIGO-Virgo Observing Runs", (2021). (arXiv:2111.13106)
+\item[\ctext{9}.] \uline{Hiroki Takeda}, Atsushi Nishizawa, Yuta Michimura, Koji Nagano, Kentaro Komori, Masaki Ando, and Kazuhiro Hayama, "\emph{Prospects for gravitational-wave polarization tests from compact binary mergers with future ground-based detectors}", Physical Review D , American Physical Society, {\bf 100}, 042001 (2019). (arXiv:1904.09989)\\
 
+\item[\ctext{10}.] \uline{Hiroki Takeda}, Atsushi Nishizawa, Yuta Michimura, Koji Nagano, Kentaro Komori, Masaki Ando, and Kazuhiro Hayama, " \emph{Polarization test of gravitational waves from compact binary coalescences}",Physical Review D , American Physical Society, {\bf 98}, 022008 (2018). (arXiv:1806.02182)\\
 
+\setcounter{enumi}{10}
+\item Yuta Michimura, Kentaro Komori, Atsushi Nishizawa, \uline{Hiroki Takeda}, Koji Nagano, Yutaro Enomoto, Kazuhiro Hayama, Kentaro Somiya, and Masaki Ando, "\emph{Particle swarm optimization of the sensitivity of cryogenic gravitational wave detector}", Physical Review D , American Physical Society, {\bf 97}, 122003, (2018). (arXiv:1804.09894)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "Constraints on the cosmic expansion history from the third LIGO-Virgo-KAGRA Gravitational-Wave Transient Catalog", (2021). (arXiv:2111.03604)
+\item Kentaro Komori, Yutaro Enomoto, \uline{Hiroki Takeda}, Yuta Michimura, Kentaro Somiya, Masaki Ando, and Stefan W. Ballmer, "\emph{Direct Approach for the Fluctuation-Dissipation Theorem under Non-Equilibrium Steady-State Conditions}", Physical Review D , American Physical Society, {\bf 97}, 102001 (2018). (arXiv:1803.00585)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "GWTC-3: Compact Binary Coalescences Observed by LIGO and Virgo During the Second Part of the Third Observing Run", (2021). (arXiv:2111.03606)
+\item Yuta Michimura, Tomofumi Shimoda, Takahiro Miyamoto, Ayaka Shoda, Koki Okutomi, Yoshinori Fujii, \uline{Hiroki Tanaka}, Mark A. Barton, Ryutaro Takahashi, Yoichi Aso, Tomotada Akutsu, Masaki Ando, Yutaro Enomoto, Raffaele Flaminio, Kazuhiro Hayama, Eiichi Hirose, Yuki Inoue, Takaaki Kajita, Masahiro Kamiizumi, Seiji Kawamura, Keiko Kokeyama, Kentaro Komori, Rahul Kumar, Osamu Miyakawa, Koji Nagano, Masayuki Nakano, Naoko Ohishi, Ching Pin Ooi, Fabi\UTF{00E1}n Erasmo Pe\UTF{00F1}a Arellano, Yoshio Saito, Katsuhiko Shimode, Kentaro Somiya, Hiroki Takeda, Takayuki Tomaru, Takashi Uchiyama, Takafumi Ushiba, Kazuhiro Yamamoto, Takaaki Yokozawa, and Hirotaka Yuzurihara, "\emph{Mirror actuation design for the interferometer control of the KAGRA gravitational wave telescope}", Classical and Quantum Gravity, IOP Publishing, {\bf 34}, 225001 (2017). (arXiv:1709.02574)
+\end{enumerate}
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "Search for Gravitational Waves Associated with Gamma-Ray Bursts detected by Fermi and Swift during the O3b LIGO-Virgo Run", (2021). (arXiv:2111.03608) 
+\subsection*{コラボレーション論文 \\(LIGO-Virgo-KAGRA, KAGRA, LISA, DECIGO)}
+\begin{enumerate}
+\setcounter{enumi}{13}
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Search for gravitational-wave transients associated with magnetar bursts in Advanced LIGO and Advanced Virgo data from the third observing run}", The Astrophysical Journal, IOP Publishing, (2022). (arXiv:2210.10931)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "The population of merging compact binaries inferred using gravitational waves through GWTC-3", (2021). (arXiv:2111.03634)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Model-based cross-correlation search for gravitational waves from the low-mass X-ray binary Scorpius X-1 in LIGO O3 data }", The Astrophysical Journal Letters, IOP Publishing, (2022). (arXiv:2209.02863)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "All-sky, all-frequency directional search for persistent gravitational waves from Advanced LIGO's and Advanced Virgo's first three observing runs ", Physical Review Letters, American Physical Society, (2021). (arXiv:2110.09834)
+\item The KAGRA Collaboration (H. Abe, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Noise subtraction from KAGRA O3GK data using Independent Component Analysis}", (2022). (arXiv:2206.05785)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration, plus D. Jeong and S. Shandera (R. Abbott, ..., Hiroki Takeda, ..., et al.), "Search for subsolar-mass binaries in the first half of Advanced LIGO and Virgo's third observing run ", Physical Review Letters, American Physical Society, (2021). (arXiv:2109.12197)
+\item The KAGRA Collaboration (H. Abe, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{The current status and future prospects of KAGRA, the large-scale cryogenic gravitational wave telescope built in the Kamioka underground}", Galaxies, MDPI, {\bf 10}, 63 (2022). \\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration plus A. C. Albayati, D. Altamirano, P. Bult, D. Chakrabarty, M. Ng, P. S. Ray, A. Sanna, and T. E. Strohmayer (R. Abbott, ..., Hiroki Takeda, ..., et al.), "Search for continuous gravitational waves from 20 accreting millisecond X-ray pulsars in O3 LIGO data", Physical Review D, American Physical Society, (2021). (arXiv:2109.09255)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.),
+"Search for continuous gravitational wave emission from the Milky Way center in O3 LIGO-Virgo data", Physical Review D, American Physical Society, {\bf 106}, 042003 (2022).
+(arXiv:2204.04523)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "All-sky search for long-duration gravitational-wave transients in the third Advanced LIGO observing run", Physical Review D, American Physical Society, (2021). (arXiv:2107.13796)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.),
+"\emph{Search for gravitational waves associated with Fast Radio Bursts Detected by CHIME/FRB During the LIGO-Virgo Observing Run O3a}",  The Astrophysical Journal, IOP Publishing,  (2022). (arXiv:2203.12038)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "All-sky search for short gravitational-wave bursts in the third Advanced LIGO and Advanced Virgo run", Physical Review D, American Physical Society, (2021). (arXiv:2107.03701)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{First joint observation by the underground gravitational-wave detector KAGRA with GEO 600}", Progress of Theoretical and Experimental Physics, Physical Society of Japan, {\bf 2022}, 063F01 (2022). (arXiv:2203.01270)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "All-sky Search for Continuous Gravitational Waves in the Early O3 LIGO Data", Physical Review D, American Physical Society, 104, 082004 (2021). (arXiv:2107.00600)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Search for gravitational waves from Scorpius X-1 with a hidden Markov model in O3 LIGO data}", Physical Review D, American Physical Society, {\bf 106} 062002(2022). (arXiv:2201.10104)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "Observation of Gravitational Waves from Two Neutron Star–Black Hole Coalescences", The Astrophysical Journal Letters, IOP Publishing, 915, L5 (2021). (arXiv:2106.15163)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.),
+"\emph{All-sky search for continuous gravitational waves from isolated neutron stars using Advanced LIGO and Advanced Virgo O3 data}", Physical Review D, American Physical Society, (2022). (arXiv:2201.00697)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "Upper Limits on the Isotropic Gravitational-Wave Background from Advanced LIGO's and Advanced Virgo's Third Observing Run", Physical Review D, American Physical Society, 104, 022004 (2021). (arXiv:2101.12130)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.) plus 28 radio astronomers and NICER science team members,
+"\emph{Narrowband searches for continuous and long-duration transient gravitational waves from known pulsars in the LIGO-Virgo third observing run}", The Astrophysical Journal, IOP Publishing, {\bf 932}, 133 (2022). (arXiv:2112.10990)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "Constraints on Cosmic Strings Using Data from the Third Advanced LIGO–Virgo Observing Run", Physical Review Letters, American Physical Society, 126, 241102 (2021). (arXiv:2101.12248)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Tests of General Relativity with GWTC-3}", Physical Review D, American Physical Society, (2021). (arXiv:2112.06861)\\
 
-\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., Hiroki Takeda, ..., et al.), "Diving below the Spin-down Limit: Constraints on Gravitational Waves from the Energetic Young Pulsar PSR J0537-6910", The Astrophysical Journal Letters, IOP Publishing, 913, L27 (2021). (arXiv:2012.12926)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Search of the Early O3 LIGO Data for Continuous Gravitational Waves from the Cassiopeia A and Vela Jr. Supernova Remnants}", Physical Review D, American Physical Society, {\bf 105}, 082005 (2022). (arXiv:2111.15116)\\
 
-\item KAGRA Collaboration (T. Akutsu, ..., Hiroki Takeda, ..., et al.), "Overview of KAGRA: Calibration, detector characterization, physical environmental monitors, and the geophysics interferometer ", Progress of Theoretical and Experimental Physics, Physical Society of Japan, ptab018 (2020). (arXiv:2009.09305)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{All-sky search for gravitational wave emission from scalar boson clouds around spinning black holes in LIGO O3 data}", Physical Review D, American Physical Society, {\bf 105}, 102001 (2022). (arXiv:2111.15507)\\
 
-\item KAGRA Collaboration (T. Akutsu, ..., Hiroki Takeda, ..., et al.), "Overview of KAGRA: KAGRA science", Progress of Theoretical and Experimental Physics, Physical Society of Japan, ptaa120 (2020). (arXiv:2008.02921)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Searches for Gravitational Waves from Known Pulsars at Two Harmonics in the Second and Third LIGO-Virgo Observing Runs}", The Astrophysical Journal, IOP Publishing, {\bf935}, 1 (2021). (arXiv:2111.13106)\\
 
-\item KAGRA Collaboration (T. Akutsu, ..., Hiroki Takeda, ..., et al.), "Overview of KAGRA: Detector design and construction history ", Progress of Theoretical and Experimental Physics, Physical Society of Japan, ptaa125 (2020). (arXiv:2005.05574)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Constraints on the cosmic expansion history from the third LIGO-Virgo-KAGRA Gravitational-Wave Transient Catalog}", The Astrophysical Journal, IOP Publishing, (2021). (arXiv:2111.03604)\\
 
-\item KAGRA Collaboration, LIGO Scientific Collaboration and Virgo Collaboration (B.P. Abbott, ..., Hiroki Takeda, ..., et al.), "Prospects for observing and localizing gravitational-wave transients with Advanced LIGO, Advanced Virgo and KAGRA", Living Reviews in Relativity, Springer International Publishing, 23, 3 (2020).
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{GWTC-3: Compact Binary Coalescences Observed by LIGO and Virgo During the Second Part of the Third Observing Run}", (2021). (arXiv:2111.03606)\\
 
-\item Kiwamu Izumi, ..., Hiroki Takeda, ..., et al., "The current status of contribution activities in Japan for LISA", Progress of Theoretical and Experimental Physics, Physical Society of Japan, ptaa124 (2020).
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.),
+"\emph{Search for Gravitational Waves Associated with Gamma-Ray Bursts detected by Fermi and Swift during the O3b LIGO-Virgo Run}",
+The Astrophysical Journal, IOP Publishing, {\bf 928}, 186 (2022).
+(arXiv:2111.03608) \\
 
-\item Enrico Barausse, ..., Hiroki Takeda, ..., et al., "Prospects for fundamental physics with LISA", General Relativity and Gravitation, International Society on General Relativity and Gravitation, 52, 81 (2020). (arXiv:2001.09793)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{The population of merging compact binaries inferred using gravitational waves through GWTC-3}", (2021). (arXiv:2111.03634)\\
 
-\item KAGRA Collaboration (T. Akutsu, ..., Hiroki Takeda, ..., et al.), "Application of the independent component analysis to the iKAGRA data", Progress of Theoretical and Experimental Physics, Physical Society of Japan, Volume 2020, Issue 5, 053F01 (2020). (arXiv:1908.03013)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{All-sky, all-frequency directional search for persistent gravitational waves from Advanced LIGO's and Advanced Virgo's first three observing runs}", Physical Review D, American Physical Society, {\bf 105}, 122002 (2022). (arXiv:2110.09834)\\
 
-\item KAGRA Collaboration (Tomotada Akutsu, ..., Hiroki Takeda, ..., et al.), "An arm length stabilization system for KAGRA and future gravitational-wave detectors", Classical and Quantum Gravity, IOP Publishing, 37, 035004 (2020).\\ (arXiv:1910.00955)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration, plus D. Jeong and S. Shandera (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Search for subsolar-mass binaries in the first half of Advanced LIGO and Virgo's third observing run}", Physical Review Letters, American Physical Society, {\bf 129}, 061104 (2022). (arXiv:2109.12197)\\
 
-\item KAGRA Collaboration (Tomotada Akutsu, ..., Hiroki Takeda, ..., et al.), "First cryogenic test operation of underground km-scale gravitational-wave observatory KAGRA", Classical and Quantum Gravity, IOP Publishing,36, 165008 (2019).\\ (arXiv:1901.03569)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration plus A. C. Albayati, D. Altamirano, P. Bult, D. Chakrabarty, M. Ng, P. S. Ray, A. Sanna, and T. E. Strohmayer (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Search for continuous gravitational waves from 20 accreting millisecond X-ray pulsars in O3 LIGO data}", Physical Review D, American Physical Society, {\bf 105}, 022002 (2021). (arXiv:2109.09255)\\
 
-\item KAGRA Collaboration (Y. Akiyama, ..., Hiroki Takeda, ..., et al.), "Vibration isolation system with a compact damping system for power recycling mirrors of KAGRA ", Classical and Quantum Gravity, IOP Publishing, 36, 095015 (2019). (arXiv:1901.03053)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{All-sky search for long-duration gravitational-wave transients in the third Advanced LIGO observing run}", Physical Review D, American Physical Society, {\bf 104}, 102001 (2021). (arXiv:2107.13796)\\
 
-\item KAGRA Collaboration (Tomotada Akutsu, ..., Hiroki Takeda, ..., et al.), "KAGRA: 2.5 Generation Interferometric Gravitational Wave Detector ", Nature Astronomy, Nature Publishing Group, 3, 35 (2019). (arXiv:1811.08079)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{All-sky search for short gravitational-wave bursts in the third Advanced LIGO and Advanced Virgo run}", Physical Review D, American Physical Society, {\bf 104}, 122004(2021). (arXiv:2107.03701)\\
 
-\item KAGRA Collaboration (Tomotada Akutsu, ..., Hiroki Takeda, ..., et al.), "Construction of KAGRA: an Underground Gravitational Wave Observatory", Progress of Theoretical and Experimental Physics, Physical Society of Japan, Volume 2018, Issue 1 (2018). (arXiv: 1712.00148)
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{All-sky Search for Continuous Gravitational Waves in the Early O3 LIGO Data}", Physical Review D, American Physical Society, {\bf 104}, 082004 (2021). (arXiv:2107.00600)\\
+
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Observation of Gravitational Waves from Two Neutron Star\UTF{2013}Black Hole Coalescences}", The Astrophysical Journal Letters, IOP Publishing, {\bf 915}, L5 (2021). (arXiv:2012.12926)\\
+
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Search for intermediate mass black hole binaries in the third observing run of Advanced LIGO and Advanced Virgo}", Astronomy \& Astrophysics, EDP Sciences, {\bf 659}, A84 (2021). (arXiv:2105.15120)\\
+
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Constraints on dark photon dark matter using data from LIGO's and Virgo's third observing run}", Physical Review Letters, American Physical Society, {\bf 126}, 241102 (2021). (arXiv:2101.12248)\\
+
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Searches for continuous gravitational waves from young supernova remnants in the early third observing run of Advanced LIGO and Virgo}", The Astrophysical Journal, IOP Publishing, {\bf 921}, 80 (2021). (arXiv:2105.11641)\\
+
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration plus D. Antonopoulou, Z. Arzoumanian, T. Enoto, C. M. Espinoza, and S. Guillot (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Constraints from LIGO O3 data on gravitational-wave emission due to r-modes in the glitching pulsar PSR J0537-6910 }", The Astrophysical Journal, IOP Publishing, {\bf 922}, 71 (2021). (arXiv:2104.14417)\\
+
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Search for anisotropic gravitational-wave backgrounds using data from Advanced LIGO's and Advanced Virgo's first three observing runs }", Physical Review D, American Physical Society, {\bf 104}, 022005 (2021). (arXiv:2103.08520)\\
+
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Constraints on Cosmic Strings Using Data from the Third Advanced LIGO–Virgo Observing Run}", Physical Review Letters, American Physical Society, {\bf 126}, 241102 (2021). (arXiv:2101.12248)\\
+
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Upper Limits on the Isotropic Gravitational-Wave Background from Advanced LIGO's and Advanced Virgo's Third Observing Run}", Physical Review D, American Physical Society, {\bf 104}, 022004 (2021). (arXiv:2101.12130)\\
+
+\item The LIGO Scientific Collaboration, the Virgo Collaboration, the KAGRA Collaboration (R. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Diving below the Spin-down Limit: Constraints on Gravitational Waves from the Energetic Young Pulsar PSR J0537-6910}", The Astrophysical Journal Letters, IOP Publishing, {\bf 913}, L27 (2021). (arXiv:2012.12926)\\
+
+\item KAGRA Collaboration (T. Akutsu, ..., \uline{Hiroki Takeda}, ..., et al.),
+"\emph{Vibration isolation systems for the beam splitter and signal recycling mirrors of the KAGRA gravitational wave detector}",
+Classical and Quantum Gravity, IOP Publishing, {\bf 38}, 065011 (2021).\\
+
+\item KAGRA Collaboration (T. Akutsu, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Overview of KAGRA: Calibration, detector characterization, physical environmental monitors, and the geophysics interferometer}", Progress of Theoretical and Experimental Physics, Physical Society of Japan, {\bf 2020}, ptab018 (2020). (arXiv:2009.09305)\\
+
+\item[\ctext{49}.] KAGRA Collaboration (T. Akutsu, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Overview of KAGRA: KAGRA science}", Progress of Theoretical and Experimental Physics, Physical Society of Japan, {\bf 2020}, ptaa120 (2020). (arXiv:2008.02921)\\
+
+ \setcounter{enumi}{49}
+\item KAGRA Collaboration (T. Akutsu, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Overview of KAGRA: Detector design and construction history}", Progress of Theoretical and Experimental Physics, Physical Society of Japan, {\bf 2020}, ptaa125 (2020). (arXiv:2005.05574)\\
+
+\item KAGRA Collaboration, LIGO Scientific Collaboration and Virgo Collaboration (B.P. Abbott, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Prospects for observing and localizing gravitational-wave transients with Advanced LIGO, Advanced Virgo and KAGRA}", Living Reviews in Relativity, Springer International Publishing, {\bf 23}, 3 (2020).\\
+
+\item Kiwamu Izumi, ..., \uline{Hiroki Takeda}, ..., et al., "\emph{The current status of contribution activities in Japan for LISA}", Progress of Theoretical and Experimental Physics, Physical Society of Japan, {\bf 2020}, ptaa124 (2020).\\
+
+\item Enrico Barausse, ..., \uline{Hiroki Takeda}, ..., et al., "\emph{Prospects for fundamental physics with LISA}", General Relativity and Gravitation, International Society on General Relativity and Gravitation, {\bf 52}, 81 (2020). (arXiv:2001.09793)\\
+
+\item KAGRA Collaboration (T. Akutsu, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Application of the independent component analysis to the iKAGRA data}", Progress of Theoretical and Experimental Physics, Physical Society of Japan, {\bf 2020}, 053F01 (2020). (arXiv:1908.03013)\\
+
+\item KAGRA Collaboration (Tomotada Akutsu, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{An arm length stabilization system for KAGRA and future gravitational-wave detectors}", Classical and Quantum Gravity, IOP Publishing, {\bf 37}, 035004 (2020). (arXiv:1910.00955)\\
+
+\item KAGRA Collaboration (Tomotada Akutsu, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{First cryogenic test operation of underground km-scale gravitational-wave observatory KAGRA}", Classical and Quantum Gravity, IOP Publishing, {\bf 36}, 165008 (2019). (arXiv:1901.03569)\\
+
+\item KAGRA Collaboration (Y. Akiyama, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Vibration isolation system with a compact damping system for power recycling mirrors of KAGRA}", Classical and Quantum Gravity, IOP Publishing, {\bf 36}, 095015 (2019). (arXiv:1901.03053)\\
+
+\item KAGRA Collaboration (Tomotada Akutsu, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{KAGRA: 2.5 Generation Interferometric Gravitational Wave Detector}", Nature Astronomy, Nature Publishing Group, {\bf 3}, 35 (2019). (arXiv:1811.08079)\\
+
+\item KAGRA Collaboration (Tomotada Akutsu, ..., \uline{Hiroki Takeda}, ..., et al.), "\emph{Construction of KAGRA: an Underground Gravitational Wave Observatory}", Progress of Theoretical and Experimental Physics, Physical Society of Japan, {\bf 2018}, 1 (2018). (arXiv: 1712.00148)
 
 \end{enumerate}
 
-\section*{口頭発表}
-国際会議のみ掲載
+
+\section*{講演}
+\subsection*{招待セミナー}
 \begin{enumerate}
+\item \uline{Hiroki Takeda}, "\emph{Consistent search for polarization modes of gravitational waves from generation to detection}", Observational Cosmology Summer Workshop in 2022,  Hamamatsu, Japan, Aug. 2022.\\
 
-\item Hiroki Takeda, Soichiro Morisaki, and Atsushi Nishizawa “Scalar-tensor mixed polarization search for gravitational waves from compact binary coalescences”, Gravitational Wave Physics and Astronomy Workshop 2021, Hannover, Germany, Dec 2021.
+\item \uline{Hiroki Takeda}, "\emph{Polarization test of gravitational waves from compact binary coalescences}", Seminar at Institute of Particle Physics and Astrophysics, School of Physics, Huazhong University of Science and Technology, Wuhan, China, Nov. 2018.\\
+\end{enumerate}
 
-\item Hiroki Takeda, Atsushi Nishizawa, and Soichiro Morisaki, "Polarization tests of GW170814 and GW170817 using waveforms consistent with alternative theories of gravity", 7th KAGRA International Workshop, In person for Taiwan people, in remote for others, Dec 2020.
+\subsection*{国際会議のみ記載}
+\subsubsection*{口頭発表}
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item \uline{Hiroki Takeda}, Soichiro Morisaki, and Atsushi Nishizawa “\emph{Search for mixture of scalar-tensor polarizations of gravitational waves}”, 23rd International Conference on General Relativity and Gravitation, Beijing, China, hybrid, Jul. 2022.\\
 
-\item Hiroki Takeda, Tomoya Kinugawa, and Hiroya Yamaguchi, "Ability of DECIGO to constrain the Type Ia supernova progenitor system", Gravitational Wave Physics and Astronomy Workshop 2019, Tokyo, Japan, Oct 2019.
+\item \uline{Hiroki Takeda}, Soichiro Morisaki, and Atsushi Nishizawa,
+"\emph{Testing gravity theory with gravitational wave polarizations}",
+Innovative Area "Gravitational Wave Physics and Astronomy: Genesis" Group A Winter Camp,Kyoto, Japan, Jan. 2021.\\
 
-\item Hiroki Takeda, Atsushi Nishizawa, Yuta Michimura, Koji Nagano, Kentaro Komori, Masaki Ando, and Kazuhiro Hayama, "Probing nontensorial polarization of inspiral gravitational waves with the third-generation detectors", The 28th Workshop on General Relativity and Gravitation in Japan – JGRG28, Tokyo, Japan, Nov 2018.
+\item \uline{Hiroki Takeda}, Soichiro Morisaki, and Atsushi Nishizawa “\emph{Scalar-tensor mixed polarization search for gravitational waves from compact binary coalescences}”, Gravitational Wave Physics and Astronomy Workshop 2021, Hannover, Germany, Dec. 2021.\\
 
-\item Hiroki Takeda, Atsushi Nishizawa, Yuta Michimura, Koji Nagano, Kentaro Komori, Masaki Ando, and Kazuhiro Hayama, "Polarization test of gravitational waves from compact binary coalescences", The 15th Marcel Grossmann Meeting, Rome, Italy, July 2018.
+\item \uline{Hiroki Takeda}, Atsushi Nishizawa, and Soichiro Morisaki, "\emph{Polarization tests of GW170814 and GW170817 using waveforms consistent with alternative theories of gravity}", 7th KAGRA International Workshop, In person for Taiwan people, in remote for others, Dec. 2020.\\
 
-\item Hiroki Takeda, Atsushi Nishizawa, Yuta Michimura, Koji Nagano, Kentaro Komori, Masaki Ando, and Kazuhiro Hayama, “Parameter estimation with inspiral waveforms of compact binary coalescences including nontensorial gravitational waves polarizations”, 19th KAGRA face-to-face meeting, Osaka, Japan, May 2018.
+\item \uline{Hiroki Takeda}, Tomoya Kinugawa, and Hiroya Yamaguchi, "\emph{Ability of DECIGO to constrain the Type Ia supernova progenitor system}", Gravitational Wave Physics and Astronomy Workshop 2019, Tokyo, Japan, Oct. 2019.\\
+
+\item \uline{Hiroki Takeda}, Atsushi Nishizawa, Yuta Michimura, Koji Nagano, Kentaro Komori, Masaki Ando, and Kazuhiro Hayama, "\emph{Probing nontensorial polarization of inspiral gravitational waves with the third-generation detectors}", The 28th Workshop on General Relativity and Gravitation in Japan – JGRG28, Tokyo, Japan, Nov. 2018.\\
+
+\item \uline{Hiroki Takeda}, Atsushi Nishizawa, Yuta Michimura, Koji Nagano, Kentaro Komori, Masaki Ando, and Kazuhiro Hayama, "\emph{Polarization test of gravitational waves from compact binary coalescences}", The 15th Marcel Grossmann Meeting, Rome, Italy, Jul. 2018.\\
+
+\item \uline{Hiroki Takeda}, Atsushi Nishizawa, Yuta Michimura, Koji Nagano, Kentaro Komori, Masaki Ando, and Kazuhiro Hayama, “\emph{Parameter estimation with inspiral waveforms of compact binary coalescences including nontensorial gravitational waves polarizations}”, 19th KAGRA face-to-face meeting, Osaka, Japan, May. 2018.
+\end{enumerate}
+
+\subsubsection*{ポスター発表}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+\item \uline{Hiroki Takeda}, Atsushi Nishizawa, and Soichiro Morisaki, “\emph{Search for scalar-tensor mixed polarization of gravitational waves}”, 14th Edoardo Amaldi Conference on Gravitational Waves, in remote style, Jul. 2021.\\
+
+\item \uline{Hiroki Takeda}, Atsushi Nishizawa, Yuta Michimura, Koji Nagano, Kentaro Komori, Masaki Ando, and Kazuhiro Hayama, “\emph{Prospects for gravitational-wave polarization test from compact binary coalescences with next-generation detectors}”, 26th Face to Face Meeting, in remote style, Dec. 2020.\\
+
+\item \uline{Hiroki Takeda}, Atsushi Nishizawa, and Soichiro Morisaki, “\emph{Tests of alternative theories of gravity through gravitational-wave polarization modes}”, 22nd International Conference on General Relativity and Gravitation, 13th Edoardo Amaldi Conference on Gravitational Waves, Valencia, Spain, Jul. 2019.\\
 
 \end{enumerate}
 
-\section*{ポスター発表}
-国際会議のみ掲載
+\section*{アウトリーチ活動}
+
 \begin{enumerate}
-\item Hiroki Takeda, Atsushi Nishizawa, and Soichiro Morisaki, “Search for scalar-tensor mixed polarization of gravitational waves”, 14th Edoardo Amaldi Conference on Gravitational Waves, in remote style, July 2021.
+\item \uline{武田　紘樹}, 講演「重力波で覗く宇宙 -テスト漬けの日々の先に何が待ち受けているか」, 箕面自由学園高等学校, 2022年8月4日.\\
 
-\item Hiroki Takeda, Atsushi Nishizawa, Yuta Michimura, Koji Nagano, Kentaro Komori, Masaki Ando, and Kazuhiro Hayama, “Prospects for gravitational-wave polarization test from compact binary coalescences with next-generation detectors”, 26th Face to Face Meeting, in remote style, Dec 2020.
+\item \uline{武田　紘樹}, NHK京都「京いちにち」, 2022年7月27日生出演.\\
 
-\item Hiroki Takeda, Atsushi Nishizawa, and Soichiro Morisaki, “Tests of alternative theories of gravity through gravitational-wave polarization modes”, 22nd International Conference on General Relativity and Gravitation, 13th Edoardo Amaldi Conference on Gravitational Waves, Valencia, Spain, July 2019.
+\item \uline{武田　紘樹}, 毎日新聞夕刊「博士アイドル - 憂楽帳」, 2022年6月20日掲載.\\
 
-
+\item \uline{武田　紘樹}, YouTubeチャンネル“4コマ宇宙”,  総再生回数19.4万回, 2022年2月より.\\
 \end{enumerate}
 
 %%%%%%%%%%%%%%
