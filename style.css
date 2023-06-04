@@ -46,13 +46,13 @@ header h1 {
   transform-origin: 1px;
 }
 
-@media (min-width: 830px) {
+@media (min-width: 875px) {
   #nav-menu {
     display: flex;
   }
 }
 
-@media (max-width: 830px) {
+@media (max-width: 875px) {
   #nav-icon {
     display: flex;
   }
@@ -127,7 +127,7 @@ nav ul li a {
   margin: 20px 50px;
 }
 
-@media (max-width: 830px) {
+@media (max-width: 875px) {
   .content .left, .content .right {
     width: 100%;
   }
