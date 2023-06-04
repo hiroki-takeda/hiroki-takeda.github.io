@@ -1,196 +1,67 @@
+
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
   <title>Hiroki Takeda</title>
-   
-<style type="text/css">
-	div.blocka{
-	 float: left;
-	 width: 50%;}
-	
-	div.blockb {
-	  float: right;
-	  width: 50%;}
-
-	div.blockc {
-	  clear:both}
-</style>
-
-<style type="text/css">
-body {
-background-color: #ffffff;
-font-family: 'Times New Roman','Hiragino Kaku Gothic Pro',sans-serif;
-font-size: large;
-margin-left:20px;
-padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにするため */
-}
-header {
-  position: fixed;
-  width: 100%;
-  height: 50px;
-  background: #fff;
-  padding: 0px 0px; /* ヘッダーに上下左右それぞれ余白を指定 */
-  box-sizing: border-box; /* padding分を含んで幅を100%にするため */
-  position: fixed; /* ウィンドウを基準に画面に固定 */
-  top: 0; /* 上下の固定位置を上から0pxにする */
-  left: 0; /* 左右の固定位置を左から0pxにする */
-  display: flex; /* 中の要素を横並びにする */
-  align-items: center; /* 中の要素を上下中央に並べる */
-
-}
-header div{
-	margin-left: 200px;
-}
-header div:first-child{
-	margin-left: 10px;
-}
-footer {
-  width: 100%;
-  height: 20px;
-  text-align: center;
-  padding: 0px 0;
-  color: #fff;
-  background-color: #000;
-}
-</style>
-
-<style type="text/css">
-div{
-	padding-top: 20px;
-}
-h1, h2 {
-	padding-left:0.3em;
-	font-family: 'Gill Sans',sans-serif;
-	font-weight: lighter;
-	  font-size: 6ex;
-}
-h3 {
-	padding-left:0.3em;
-	font-family: 'Gill Sans',sans-serif;
-	font-weight: lighter;
-	font-size: 3ex;
-}
-h2 {
-	background-color:#fffff;
-}
-ul li {
-	list-style-type: None;
-}
-td {
-	vertical-align: top;
-}
-a:link{
-	 color: #202020;
-	 text-decoration:none;
-}
-a:visited {
-	 color: #000000;
-}
-a:hover {
-	text-decoration:underline;
-}
-.comment {
-	padding-left:2em;
-	font-size: small;
-}
-.paper {
-	padding-left:2em;
-}
-img {
-max-width: 100%;
-height: auto;
-}
-.resizeimage img { width: 100%; }
-</style>
-
-<style type="text/css">
-nav {
-	list-style: none;
-	font-size: 0;
-}
- 
-nav ul {
-	margin: 0 ;
-	padding: 0 ;
-	font-size: 0;
-}
- 
-nav ul li{
-	text-align: left;
-	/*width: 10%;  ここで項目の幅を指定します */
-	font-size: 24px;
-	display: inline-block;
-	font-family: 'Gill Sans',sans-serif;
-	margin-right: 20px;
-}
-nav ul li a {
-	text-decoration: none;
-	color: #00000; /* 文字色を指定します */
-}
- 
-nav li:hover{
-	color: #fffff; /* 文字色を指定します */
-	background-color: #00000; /* 背景色を指定します */
-	opacity: 0.8; /* hover時の不透明度を調整します */
-}
-</style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
-
 
 <body>
 <header>
-<div>
-<h1>Hiroki Takeda</h1>
-</div>
-
-<div>
-<nav>
-<ul>
-	<li><a href=/index.html>Home</a></li>
-	<li><a href=/cv.html>CV</a></li>
-	<li><a href=/research.html>Research</a></li>
-	<li><a href=/papers.html>Papers</a></li>
-	<li><a href=/presentations.html>Presentations</a></li>
-	<li><a href=/documents.html>Documents</a></li>
-	<li><a href=/misc.html>Miscellaneous</a></li>
-</ul>
-</nav>
-</div>
+  <h1>Hiroki Takeda</h1>
+  <div id="nav-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/cv.html">CV</a></li>
+      <li><a href="/research.html">Research</a></li>
+      <li><a href="/publications.html">Publications</a></li>
+      <li><a href="/presentations.html">Presentations</a></li>
+      <li><a href="/misc.html">Miscellaneous</a></li>
+    </ul>
+  </nav>
 </header>
 
 
-<div class="blocka">
-<h2 id="Profile">Welcome</h2>
-武田　紘樹です。<br>
-宇宙の研究をしています。<br>
-専門は重力理論、重力波天文学、重力波実験。<br>
-重力波という時空の歪みで重力や宇宙を調べています。<br>
+<div class="content">
+  <div class="left">
+    <h1>Welcome</h1>
+    <p>武田 紘樹です。<br>
+    宇宙の研究をしています。<br>
+    専門は重力理論、重力波天文学、重力波実験。<br>
+    重力波という時空の歪みで重力や宇宙を調べています。</p>
 
-<ul>
-  <li> <a href=https://arxiv.org/search/?query=%22Hiroki+Takeda%22&searchtype=author&abstracts=show&order=-announced_date_first&size=50> arXiv</a><br></li> 
-  <li> <a href=https://scholar.google.com/citations?user=Cq6rALgAAAAJ&hl=ja&oi=ao> Google Scholar</a><br></li> 
-  <li> <a href=https://inspirehep.net/authors/1684306> INSPIRE</a><br></li> 
-  <li> <a href=https://researchmap.jp/hiroki-takeda> Research map</a><br></li> 
-</ul>
+    <ul>
+      <li><a href="https://arxiv.org/search/?query=%22Hiroki+Takeda%22&searchtype=author&abstracts=show&order=-announced_date_first&size=50">arXiv</a></li>
+      <li><a href="https://scholar.google.com/citations?user=Cq6rALgAAAAJ&hl=ja&oi=ao">Google Scholar</a></li>
+      <li><a href="https://inspirehep.net/authors/1684306">INSPIRE</a></li>
+      <li><a href="https://researchmap.jp/hiroki-takeda">Research map</a></li>
+    </ul>
+  </div>
+
+  <div class="right">
+    <img src="https://hiroki-takeda.github.io/image/top_image.JPG" alt="Hiroki Takeda">
+  </div>
 </div>
 
-<div class="blockb">
-<img src="https://hiroki-takeda.github.io/image/top_image.JPG" alt="Hiroki Takeda">
-</div>
-
-
-<div class="blockc">
-<h1> Contact </h1>
-・Address:<br>
-　〒606-8502　京都市左京区北白川追分町 京都大学理学部物理学第二教室天体核研究室<br>
-・Phone: 075-753-3872 (+81-75-753-3886)<br>
-・E-mail: takeda _(at)_ tap.scphys.kyoto-u.ac.jp  (_(at)_→@)<br>
+<div class="contact">
+  <h1>Contact</h1>
+  <p>
+    ・Address: 〒606-8502 京都市左京区北白川追分町<br>
+     京都大学理学部物理学第二教室天体核研究室<br>
+    ・Phone: 075-753-3872 (+81-75-753-3886)<br>
+    ・E-mail: takeda _(at)_ tap.scphys.kyoto-u.ac.jp  (_(at)_→@)
+  </p>
 </div>
 
 <footer>
-<small>
-<p>© Hiroki Takeda All rights reserved.</p>
-</small>
+  <p>© Hiroki Takeda All rights reserved.</p>
 </footer>
 
 </body>

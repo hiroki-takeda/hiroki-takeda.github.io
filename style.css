@@ -1,0 +1,161 @@
+body {
+  font-family: 'Gill Sans', 'Times New Roman','Hiragino Kaku Gothic Pro',sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: #333;
+  color: #FFF;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  color: #FFF;
+}
+
+#nav-icon {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+  position: absolute;
+  right: 20px;
+}
+
+#nav-icon span {
+  width: 2rem;
+  height: 0.25rem;
+  background: white;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+@media (min-width: 800px) {
+  #nav-menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 800px) {
+  #nav-icon {
+    display: flex;
+  }
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #333;
+    padding: 10px;
+    width: 20%;
+    height: 100%;
+    margin-right: 0;
+  }
+  #nav-menu ul {
+    flex-direction: column;
+    display: flex;
+    padding-left: 0;
+  }
+  #nav-menu ul li {
+    display: block;
+    margin-bottom: 10px;
+    padding-right: 0;
+  }
+  #nav-menu.active {
+    display: flex;
+  }
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+  color: #FFF;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+nav ul li a {
+  color: #FFF;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 50px;
+}
+
+.content .left, .content .right {
+  width: 50%;
+}
+
+.content .right {
+  text-align: center;
+}
+
+.content .right img {
+  max-width: 100%;
+  height: auto;
+}
+
+.contact {
+  margin: 20px 50px;
+}
+
+@media (max-width: 800px) {
+  .content .left, .content .right {
+    width: 100%;
+  }
+}
+
+main {
+    max-width: 960px;
+    margin: auto;
+    padding: 20px;
+}
+
+main ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+main ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}

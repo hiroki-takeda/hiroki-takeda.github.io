@@ -1,167 +1,95 @@
+
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
   <title>Hiroki Takeda</title>
-   
-<style type="text/css">
-	div.blocka{
-	 float: left;
-	 width: 50%;}
-	
-	div.blockb {
-	  float: right;
-	  width: 50%;}
-
-	div.blockc {
-	  clear:both}
-</style>
-
-<style type="text/css">
-body {
-background-color: #ffffff;
-font-family: 'Times New Roman','Hiragino Kaku Gothic Pro',sans-serif;
-font-size: large;
-margin-left:20px;
-padding-top: 70px; /* ヘッダーの後ろに要素が隠れないようにするため */
-}
-header {
-  position: fixed;
-  width: 100%;
-  height: 50px;
-  background: #fff;
-  padding: 0px 0px; /* ヘッダーに上下左右それぞれ余白を指定 */
-  box-sizing: border-box; /* padding分を含んで幅を100%にするため */
-  position: fixed; /* ウィンドウを基準に画面に固定 */
-  top: 0; /* 上下の固定位置を上から0pxにする */
-  left: 0; /* 左右の固定位置を左から0pxにする */
-  display: flex; /* 中の要素を横並びにする */
-  align-items: center; /* 中の要素を上下中央に並べる */
-
-}
-header div{
-	margin-left: 200px;
-}
-header div:first-child{
-	margin-left: 10px;
-}
-footer {
-  width: 100%;
-  height: 20px;
-  text-align: center;
-  padding: 0px 0;
-  color: #fff;
-  background-color: #000;
-}
-</style>
-
-<style type="text/css">
-div{
-	padding-top: 20px;
-}
-h1, h2 {
-	padding-left:0.3em;
-	font-family: 'Gill Sans',sans-serif;
-	font-weight: lighter;
-	  font-size: 6ex;
-}
-h3 {
-	padding-left:0.3em;
-	font-family: 'Gill Sans',sans-serif;
-	font-weight: lighter;
-	font-size: 3ex;
-}
-h2 {
-	background-color:#fffff;
-}
-ul li {
-	list-style-type: None;
-}
-td {
-	vertical-align: top;
-}
-a:link{
-	 color: #202020;
-	 text-decoration:none;
-}
-a:visited {
-	 color: #000000;
-}
-a:hover {
-	text-decoration:underline;
-}
-.comment {
-	padding-left:2em;
-	font-size: small;
-}
-.paper {
-	padding-left:2em;
-}
-img {
-max-width: 100%;
-height: auto;
-}
-.resizeimage img { width: 100%; }
-</style>
-
-<style type="text/css">
-nav {
-	list-style: none;
-	font-size: 0;
-}
- 
-nav ul {
-	margin: 0 ;
-	padding: 0 ;
-	font-size: 0;
-}
- 
-nav ul li{
-	text-align: left;
-	/*width: 10%;  ここで項目の幅を指定します */
-	font-size: 24px;
-	display: inline-block;
-	font-family: 'Gill Sans',sans-serif;
-	margin-right: 20px;
-}
-nav ul li a {
-	text-decoration: none;
-	color: #00000; /* 文字色を指定します */
-}
- 
-nav li:hover{
-	color: #fffff; /* 文字色を指定します */
-	background-color: #00000; /* 背景色を指定します */
-	opacity: 0.8; /* hover時の不透明度を調整します */
-}
-</style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
-
 
 <body>
 <header>
-<div>
-<h1>Hiroki Takeda</h1>
-</div>
-
-<div>
-	<nav>
-	<ul>
-		<li><a href=/index.html>Home</a></li>
-		<li><a href=/cv.html>CV</a></li>
-		<li><a href=/research.html>Research</a></li>
-		<li><a href=/papers.html>Papers</a></li>
-		<li><a href=/presentations.html>Presentations</a></li>
-		<li><a href=/documents.html>Documents</a></li>
-		<li><a href=/misc.html>Miscellaneous</a></li>
-	</ul>
-	</nav>
-</div>
+  <h1>Hiroki Takeda</h1>
+  <div id="nav-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/cv.html">CV</a></li>
+      <li><a href="/research.html">Research</a></li>
+      <li><a href="/publications.html">Publications</a></li>
+      <li><a href="/presentations.html">Presentations</a></li>
+      <li><a href="/misc.html">Miscellaneous</a></li>
+    </ul>
+  </nav>
 </header>
+    
+<main>
+<h1 id="Presentations">Presentations</h1>
+<h2> Invited talks </h2>
+
+<ul>
+<li>
+<u>Hiroki Takeda</u>, <br>
+"<a href="">Probing scalar polarizations in gravitational waves</a>",<br>
+GW research exchange meeting, online, June 2023.
+</li>
+</ul>
 
 
+<ul>
+<li>
+<u>Hiroki Takeda</u>, <br>
+"<a href="">Scalar polarization window in gravitational-wave signals from compact binary coalescences</a>",<br>
+Seminar,Waseda University, Tokyo, Japan, May 2023.
+</li>
+</ul>
 
-<h2 id="Presentations">Talks</h2>
-<h3> International </h3>
+<ul>
+<li>
+<u>Hiroki Takeda</u>, <br>
+"<a href="">Polarization tests by DECIGO</a>",<br>
+21st DECIGO workshop, remote style, Dec. 2022.
+</li>
+</ul>
+
+<ul>
+<li>
+<u>Hiroki Takeda</u>, <br>
+"<a href="">Consistent search for polarization modes of gravitational waves from generation to detection</a>",<br>
+Observational Cosmology Summer Workshop in 2022, Hamamatsu, Japan, Aug. 2022.
+</li>
+</ul>
+
+<ul>
+<li>
+<u>Hiroki Takeda</u>, <br>
+"<a href="">Polarization test of gravitational waves from compact binary coalescences</a>",<br>
+Seminar at Institute of Particle Physics and Astrophysics, School of Physics, Huazhong University of Science and Technology, Wuhan, China, Nov. 2018.
+</li>
+</ul>
+
+<h2> International conference </h2>
+<h3> Oral </h3>
+<ul>
+<li>
+<u>Hiroki Takeda</u>, Soichiro Morisaki, and Atsushi Nishizawa, <br>
+"<a href="">Search for mixture of scalar-tensor polarizations of gravitational waves</a>",<br>
+23rd International Conference on General Relativity and Gravitation, Beijing, China, hybrid, Jul. 2022.
+</li>
+</ul>
+
+<ul>
+<li>
+<u>Hiroki Takeda</u>, Soichiro Morisaki, and Atsushi Nishizawa, <br>
+"<a href="">Testing gravity theory with gravitational wave polarizations</a>",<br>
+Innovative Area "Gravitational Wave Physics and Astronomy: Genesis" Group A Winter Camp,Kyoto, Japan, Jan 2021.
+</li>
+</ul>
 
 <ul>
 <li>
@@ -212,105 +140,14 @@ The 15th Marcel Grossmann Meeting, Rome, Italy, July 2018.
 </li>
 
 
-<h3> Domestic </h3>
+<h3> Poster </h3>
 <ul>
 <li>
-武田紘樹, 西澤篤志, 森崎宗一郎, <br>
-「<a href="">インスパイラル重力波のスカラーテンソル混合偏極探査</a>」,<br>
-日本物理学会第76回年次大会, 14pW3-12, オンライン, 2021年3月.
+<u>Hiroki Takeda</u>, Yusuke Manita, Hidetoshi Omiya, Takahiro Tanaka,<br>
+“Scalar gravitational wave and fifth force”,<br>
+28th KAGRA Face to Face Meeting, in remote style, Dec. 2022.
 </li>
 </ul>
-
-
-<ul>
-<li>
-武田紘樹, 西澤篤志, 森崎宗一郎, <br>
-「<a href="">コンパクト連星合体からの重力波純偏極モード探査</a>」,<br>
-日本物理学会2020年秋季大会, 16pSM-7, オンライン, 2020年9月.
-</li>
-</ul>
-
-<ul>
-<li>
-武田紘樹, 衣川 智弥, 山口 弘悦,<br>
-「<a href="">デシヘルツ重力波天文学におけるIa型超新星起源の探査</a>」,<br>
-日本天文学会2020年春季年会, W49a, オンライン, 2020年3月.
-</li>
-</ul>
-
-<ul>
-<li>
-武田紘樹, 千代田 大樹, 道村 唯太, 安東 正樹,<br>
-「<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/talks/2019autumn_jps_www.pdf">光リング共振器を用いたLorentz不変性検証(5)</a>」,<br>
-日本物理学会2019年秋季大会, 20aT11-7, 山形大学, 2019年9月.
-</li>
-</ul>
-
-<ul>
-<li>
-武田紘樹, 道村 唯太, 長野 晃士, 五十里 哲,<br>
-「<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/talks/nanosatellite_key.pdf">超小型衛星を用いた光速等方性検証ミッションの提案</a>」,<br>
-超小型衛星利用シンポジウム, 東京大学, 2019年3月.
-</li>
-</ul>
-
-<ul>
-<li>
-武田紘樹, 西澤篤志, 道村唯太, 長野晃士, 小森健太郎, 安東正樹, 端山和大,<br>
-「<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/talks/2019spring_jps_www.pdf">第三世代重力波望遠鏡によるコンパクト連星合体からの重力波偏極モード検証</a>」,<br>
-日本物理学会第74回年次大会, 15aK106-1, 2019年3月.
-</li>
-</ul>
-
-<ul>
-<li>
-武田紘樹, 西澤篤志, 道村唯太, 長野晃士, 小森健太郎, 安東正樹, 端山和大,<br>
-「<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/talks/2018autumn_jps_www.pdf">コンパクト連星合体からの重力波偏極モード検証</a>」, <br>
-日本物理学会2018年秋季大会, 15aS35-11, 2018年9月.
-</li>
-</ul>
-
-<ul>
-<li>
-武田紘樹, 酒井譲, 道村唯太, 松本伸之, 安東正樹,<br>
-「<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/talks/2018spring_jps_www.pdf">光リング共振器を用いたLorentz不変性検証(4)</a>」,<br>
-日本物理学会第73回年次大会, 23pK308-13, 2018年3月.
-</li>
-</ul>
-
-<ul>
-<li>
-武田紘樹, 酒井譲, 道村唯太, 松本伸之, 安東正樹,<br>
-「<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/talks/2017autumn_jps 2_www.pdf">光リング共振器を用いたLorentz不変性検証(2)</a>」,<br>
-日本物理学会2017年秋季大会, 15aU31-13, 2017年9月.
-</li>
-</ul>
-
-<ul>
-<li>
-武田紘樹, 酒井譲, 道村唯太, 松本伸之, 安東正樹,<br>
-「<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/talks/2017spring_jps_www.pdf">Lorentz 不変性検証のための光リング共振器制御系の開発</a>」,
-<br>日本物理学会第72 回年次大会, 19pK25-9, 2017年3月.
-</li>
-</ul>
-
-<ul>
-<li>
-武田紘樹, 道村唯太, 松本伸之, 安東正樹,<br>
-「<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/talks/2016autumn_jps2_www.pdf">光リング共振器を用いたLorentz 不変性検証の信号取得無線化による感度向上</a>」,<br>
-日本物理学会2016 年秋季大会, 24pSR-6, 宮崎大学, 2016年9月.
-</li>
-</ul>
-
-<ul>
-<li>
-武田紘樹, 中村正吾, 小野隼人, 日野陽太, 八木大介, 笠見勝祐, 斎藤究, 佐々木慎一, 俵裕子, 春山富義, 三原智,<br>
-「<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/talks/2016autumn_jpsLX2_www.pdf">液体キセノン中の散乱長の測定-1</a>」,<br>
-日本物理学会2016 年秋季大会, 24aSG-5, 宮崎大学, 2016年9月.
-</li>
-</ul>
-
-<h2 id="Posters">Posters</h2>
 
 <ul>
 <li>
@@ -335,57 +172,13 @@ The 15th Marcel Grossmann Meeting, Rome, Italy, July 2018.
 22nd International Conference on General Relativity and Gravitation, 13th Edoardo Amaldi Conference on Gravitational Waves, Valencia, Spain, July 2019.
 </li>
 </ul>
-
-<h2 id="Talks"> <Small>Seminars</Small></h2>
-
-<ul>
-<li>
-<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/seminars/190614YNU.pdf">"My interest and study"</a>,<br>
-中村研究室セミナー, 横浜国立大学, (2019.6/14).
-</li>
-</ul>
-
-<ul>
-<li>
-<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/seminars/wuhan_latest_www.pdf">"Polarization test of gravitational waves from compact binary coalescences"</a>,<br>
-Seminar at Institute of Particle Physics and Astrophysics, School of Physics, HUST, Huazhong University of Science and Technology, China, (2018.11/20).
-</li>
-</ul>
-
-<ul>
-<li>
-<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/seminars/18tyuukanhoukokukai.pdf">"Polarization of GW and Lorentz Invariance"</a>,<br>
-2018年度安東研中間報告会, (2018.5/8).
-</li>
-</ul>
-
-<ul>
-<li>
-<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/seminars/rinko171006.pdf">"Lorentz Invariance of photons and Gravitational Waves"</a>,<br>
-2017年度安東研輪講, (2017.10/6).
-</li>
-</ul>
-
-<ul>
-<li>
-<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/seminars/17tyuukanhoukokukai.pdf">"今までの僕とこれからの私"</a>,<br>
-2017年度安東研中間報告会, (2017.4/26).
-</li>
-</ul>
-
-<ul>
-<li>
-<a href="http://granite.phys.s.u-tokyo.ac.jp/takeda/seminars/rinko161014.pdf">"An Overview of Quasi-Normal Modes of Schwarzschild and Kerr Black Holes"</a>,<br>
-2016年度安東研輪講 (2016.10/14).
-</li>
-</ul>
-
-<footer>
-<small>
-<p>© Hiroki Takeda All rights reserved.</p>
-</small>
-</footer>
-
-
+ </main>
+ 
+    <footer>
+        <small>
+            <p>© Hiroki Takeda All rights reserved.</p>
+        </small>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
