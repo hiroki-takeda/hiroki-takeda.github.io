@@ -46,43 +46,6 @@ header h1 {
   transform-origin: 1px;
 }
 
-@media (min-width: 875px) {
-  #nav-menu {
-    display: flex;
-  }
-}
-
-@media (max-width: 875px) {
-  #nav-icon {
-    display: flex;
-  }
-  #nav-menu {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: #333;
-    padding: 10px;
-    width: 20%;
-    height: 100%;
-    margin-right: 0;
-  }
-  #nav-menu ul {
-    flex-direction: column;
-    display: flex;
-    padding-left: 0;
-  }
-  #nav-menu ul li {
-    display: block;
-    margin-bottom: 10px;
-    padding-right: 0;
-  }
-  #nav-menu.active {
-    display: flex;
-  }
-}
-
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -127,12 +90,6 @@ nav ul li a {
   margin: 20px 50px;
 }
 
-@media (max-width: 875px) {
-  .content .left, .content .right {
-    width: 100%;
-  }
-}
-
 main {
     max-width: 960px;
     margin: auto;
@@ -160,30 +117,106 @@ footer p {
     margin: 0;
 }
 
-
 @media (max-width: 480px) {
-  nav {
+  /* ハンバーガーメニューのスタイル */
+  #nav-icon {
+    display: none;
+  }
+  #nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 60px; /* 適切な高さに調整してください */
+    height: 60px;
     background-color: #333;
   }
-
-  nav ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  #nav-menu ul {
     list-style: none;
     height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
-
-  nav ul li {
+  #nav-menu ul li {
     color: #FFF;
-    font-size: 18px; /* 適切なサイズに調整してください */
+    font-size: 18px;
   }
-
-  nav ul li a {
+  #nav-menu ul li a {
     color: #FFF;
+  }
+  .content .left, .content .right {
+    width: 100%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 874px) {
+  /* デスクトップ版のスタイル */
+  #nav-icon {
+    display: flex;
+  }
+  #nav-menu {
+    display: none; /* デスクトップではメニューを非表示にします */
+    flex-direction: row;
+    justify-content: flex-end;
+    position: static;
+    height: auto;
+    background-color: #333;
+  }
+  #nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #nav-menu ul li {
+    color: #FFF;
+    font-size: 18px;
+    margin-left: 20px;
+  }
+  #nav-menu ul li a {
+    color: #FFF;
+  }
+  .content .left, .content .right {
+    width: 100%;
+  }
+}
+
+@media (min-width: 875px) {
+  /* デスクトップ版のスタイル */
+  #nav-icon {
+    display: none;
+  }
+  #nav-menu {
+    display: flex; /* デスクトップではメニューを表示にします */
+    flex-direction: row;
+    justify-content: flex-end;
+    position: static;
+    height: auto;
+    background-color: #333;
+  }
+  #nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #nav-menu ul li {
+    color: #FFF;
+    font-size: 18px;
+    margin-left: 20px;
+  }
+  #nav-menu ul li a {
+    color: #FFF;
+  }
+  .content .left, .content .right {
+    width: 50%;
   }
 }
