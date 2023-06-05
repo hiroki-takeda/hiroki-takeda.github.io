@@ -129,7 +129,8 @@ footer p {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: auto; /* 60pxからautoに変更 */
+    padding: 10px 0; /* パディングを追加 */
     background-color: #333;
   }
   #nav-menu ul {
