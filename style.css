@@ -1,10 +1,14 @@
 
 body {
-  font-family: 'Gill Sans', 'Times New Roman','Hiragino Kaku Gothic Pro',sans-serif;
+  font-family: 'Gill Sans', 'Helvetica', 'Hiragino Kaku Gothic Pro', sans-serif;
   background-color: #ffffff;
   margin: 0;
   padding: 0;
   color: #000;
+}
+
+h1, h2, h3{
+  font-weight: normal;
 }
 
 header {
@@ -20,6 +24,7 @@ header {
 header h1 {
   margin: 0;
   color: #000;
+  font-weight: normal; 
 }
 
 #nav-icon {
@@ -56,7 +61,7 @@ nav ul {
 
 nav ul li {
   margin-left: 20px;
-  color: #FFF;
+  color: #000;
 }
 
 a {
@@ -65,7 +70,7 @@ a {
 }
 
 nav ul li a {
-  color: #FFF;
+  color: #000;
 }
 
 .content {
@@ -107,8 +112,8 @@ main ul li {
 }
 
 footer {
-    background: #35424a;
-    color: #ffffff;
+    background: #fff;
+    color: #000;
     text-align: center;
     padding: 10px;
     margin-top: 20px;
@@ -133,7 +138,7 @@ footer p {
     left: -50px;  /* 追加 */
     height: 40px; /* 60pxからautoに変更 */
     padding: 0; /* パディングを追加 */
-    background-color: #333;
+    background-color: #fff;
     justify-content: center; /* 要素を中心に配置 */
   }
 
@@ -147,11 +152,11 @@ footer p {
     align-items: center;
   }
   #nav-menu ul li {
-    color: #FFF;
+    color: #000;
     font-size: 2vw;
   }
   #nav-menu ul li a {
-    color: #FFF;
+    color: #000;
   }
   .content .left, .content .right {
     width: 100%;
@@ -168,7 +173,7 @@ footer p {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #333;
+    background-color: #fff;
     padding: 10px;
     width: 20%;
     height: 100%;
@@ -200,7 +205,7 @@ footer p {
     justify-content: flex-end;
     position: static;
     height: auto;
-    background-color: #333;
+    background-color: #fff;
   }
   #nav-menu ul {
     list-style: none;
@@ -211,12 +216,12 @@ footer p {
     align-items: center;
   }
   #nav-menu ul li {
-    color: #FFF;
+    color: #000;
     font-size: 18px;
     margin-left: 20px;
   }
   #nav-menu ul li a {
-    color: #FFF;
+    color: #000;
   }
   .content .left, .content .right {
     width: 50%;
