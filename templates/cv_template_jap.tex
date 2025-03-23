@@ -1,0 +1,161 @@
+%%%%%%%%% JPS abstruct %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[uplatex, 11pt]{jsarticle}
+\special{papersize=210truemm,297truemm}
+
+%%%%%%%%% packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx} % Include figure files
+\usepackage{geometry} %余白設定用package
+\geometry{inner=2cm, outer=2cm, top=2cm, bottom=2cm}
+\usepackage[dvipdfmx,bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue]{hyperref} %hyperref packageを使って目次にリンク(しおり)を貼る。
+\usepackage[dvipdfmx]{pxjahyper} %日本語文字化け防止
+\usepackage[normalem]{ulem} %下線引きたい
+
+\usepackage{multicol} %部分的に二段組
+\setlength{\columnsep}{-3.5cm} %二段組の幅調整
+
+\usepackage{otf} % 名前用フォント
+
+\pagestyle{empty}
+
+%enumerateで数字に丸印つける。
+\newcommand{\ctext}[1]{\ooalign{
+\hfil\resizebox{\width}{\height}{#1}\hfil
+\crcr
+\raise-.1mm\hbox{\Large$\bigcirc$}}}
+
+\newcommand{\comicneue}{\selectfont}
+\DeclareTextFontCommand{\textcomicneue}{\comicneue}
+
+% New environment for the long list
+\newenvironment{cvlist}{%
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+}{%
+	\end{tabular*}
+}
+
+%\cvitem{<dates>}{<title>}{<location>}{<description>}
+\newcommand{\cvitem}[4]{%
+#1&\parbox[t]{0.83\textwidth}{%
+	\normalfont{#2}%
+	\hfill%
+	{\footnotesize#3}\\%
+	#4\vspace{\parsep}%
+	}\\
+}
+
+%%%%%%%%% header %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\textcomicneue{\huge\textgt{履歴書}}\\[14pt]
+
+\textcomicneue{\Huge\textgt{武田　紘樹}}\\[5pt]
+
+\end{center}
+\date{\today}
+
+\vspace{20pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multicols}{2}
+\noindent 
+\textbf{住所:} 
+〒606-8502 \\
+\noindent 
+京都市左京区北白川追分町\par
+\noindent 
+京都大学理学部物理学第二教室\\
+\noindent 
+天体核研究室\\
+\columnbreak
+
+\noindent 
+\textbf{電話番号:} +81-75-753-3876\\
+\noindent 
+\textbf{E-mail:} takeda@tap.scphys.kyoto-u.ac.jp\\
+\noindent 
+\textbf{Webサイト:} https://hiroki-takeda.github.io/index.html\\
+\noindent 
+\textbf{生年月日:} 1993年10月5日
+\end{multicols}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{学歴}
+\noindent
+\begin{cvlist} % Environment for a list with descriptions
+	%\cvitem{<dates>}{<title>}{<location>}{<description>}
+\cvitem{2018-2021}{東京大学大学院理学系研究科物理学専攻博士課程,}{}{\emph{Tests of Alternative Theories of Gravity through Gravitational-Wave Polarizations,} \\取得年月:  2021年3月.}\\
+\cvitem{2016-2018}{東京大学大学院理学系研究科物理学専攻修士課程,}{}{\emph{Development of Monolithic Optical System for Lorentz Invariance Test,}\\ 取得年月:  2018年3月.}\\
+\cvitem{2012-2016}{横浜国立大学理工学部数物・電子情報系学科物理工学EP,}{}{\emph{Proposal of Rayleigh Scattering Length Measurement in Liquid Xenon,}\\ 取得年月:  2016年3月.}
+\end{cvlist}
+
+\section*{職歴}
+\noindent
+\begin{cvlist} % Environment for a list with descriptions
+	%\cvitem{<dates>}{<title>}{<location>}{<description>}
+	\cvitem{2023-現在}{特定助教,}{}{京都大学白眉センター.}\\
+	\cvitem{2023-現在}{連携助教,}{}{京都大学大学院理学研究科.}\\	
+	\cvitem{2021-2023}{日本学術振興会特別研究員(PD),}{}{京都大学大学院理学研究科
+物理学・宇宙物理学専攻 物理第二分野.}\\
+	\cvitem{2018-2021}{日本学術振興会特別研究員(DC1),}{}{東京大学大学院理学系研究科物理学専攻.}\\
+	\cvitem{2016-2021}{Advanced Leading Graduate Course for Photon Science 生,}{}{東京大学大学院理学系研究科物理学専攻.}
+\end{cvlist}
+
+\section*{受賞歴}
+\noindent
+\begin{cvlist} % Environment for a list with descriptions
+	%\cvitem{<dates>}{<title>}{<location>}{<description>}
+	\cvitem{2021}{第76回年次大会（2021年）日本物理学会学生優秀発表賞.}{}{}
+	\cvitem{2015}{横浜国立大学理工学部数物・電子情報系学科成績優秀賞.}{}{}
+	\cvitem{2015}{横浜国立大学横浜物理工学会同窓会優秀賞.}{}{}
+	\cvitem{2014}{横浜国立大学理工学部数物・電子情報系学科物理工学EP I実習優秀ポスター賞.}{}{}
+\end{cvlist}
+
+\section*{助成金}
+\noindent
+\begin{cvlist} % Environment for a list with descriptions
+	%\cvitem{<dates>}{<title>}{<location>}{<description>}
+	\cvitem{2024-2029}{京都大学白眉プロジェクト 研究代表者,}{}{研究題目: コンパクト連星合体からの重力波の偏極モード探査による極限環境での重力理論検証,\\ 総額1432万円.}\\
+	\cvitem{2022-2026}{日本学術振興会 若手研究 研究代表者,}{}{研究題目: 重力波伝播過程の偏極モード探査による宇宙論的距離スケールでの重力理論の検証,\\ 総額360万円.}\\
+	\cvitem{2021-2024}{日本学術振興会特別研究員(PD)  特別研究員奨励費 研究代表者,}{}{研究題目: コンパクト連星合体からの重力波偏極モード探査による強重力場での重力理論検証,\\ 総額364万円.}\\
+	\cvitem{2018-2021}{日本学術振興会特別研究員(DC1)  特別研究員奨励費 研究代表者,}{}{研究題目: 光リング共振器を用いた光子のローレンツ不変性検証,\\ 総額280万円.}
+\end{cvlist}
+
+\section*{教育歴}
+\noindent
+\begin{cvlist} % Environment for a list with descriptions
+	%\cvitem{<dates>}{<title>}{<location>}{<description>}
+	\cvitem{2022-2023}{舞鶴工業高等専門学校 機械工学科 4年生 非常勤講師「物理学III(力学)」.}{}{}
+	\cvitem{2018-2019}{東京大学 理学部 物理学科 学部3年 「学生実験II(ブラウン運動)」TA.}{}{}
+	\cvitem{2012-2016}{武蔵ゼミナール 進学教室スクール８教室　学習塾講師.}{}{}
+\end{cvlist}
+
+\section*{所属団体}
+\noindent
+\begin{cvlist} % Environment for a list with descriptions
+	%\cvitem{<dates>}{<title>}{<location>}{<description>}
+	\cvitem{2020}{KAGRA Scientific Congress 学生代表.}{}{}
+	\cvitem{2019-現在}{日本天文学会 会員.}{}{}
+	\cvitem{2018-現在}{LISA Consortium メンバー.}{}{}
+	\cvitem{2017-現在}{KAGRA Collaboration.}{}{}
+	\cvitem{2016-現在}{日本物理学会 会員.}{}{}
+\end{cvlist}
+
+\section*{指標}
+%BEGIN_METRICS%
+%END_METRICS%
+
+\section*{出版物}
+%BEGIN_PUBLICATIONS%
+%END_PUBLICATIONS%
+
+\section*{発表}
+%BEGIN_PRESENTATIONS%
+%END_PRESENTATIONS%
+
+\section*{アウトリーチ活動}
+%BEGIN_ACTIVITIES%
+%END_ACTIVITIES%
+
+
+\end{document}

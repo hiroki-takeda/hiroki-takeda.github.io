@@ -1,0 +1,164 @@
+%%%%%%%%% JPS abstruct %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[uplatex, 12pt]{article}
+\special{papersize=210truemm,297truemm}
+
+%%%%%%%%% packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx} % Include figure files
+\usepackage{geometry} %余白設定用package
+\geometry{inner=2cm, outer=2cm, top=2cm, bottom=2cm}
+\usepackage[dvipdfmx,bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue]{hyperref} %hyperref packageを使って目次にリンク(しおり)を貼る。
+\usepackage[dvipdfmx]{pxjahyper} %日本語文字化け防止
+\usepackage[normalem]{ulem} %下線引きたい
+
+\usepackage{multicol} %部分的に二段組
+\setlength{\columnsep}{-3.5cm} %二段組の幅調整
+
+\usepackage{otf} % 名前用フォント
+\usepackage{gillius} % font inspired by Gill sans 
+\usepackage{sectsty} % sectionのスタイル
+\allsectionsfont{\gillius}
+
+\newcommand{\comicneue}{\gillius\selectfont}
+\DeclareTextFontCommand{\textcomicneue}{\comicneue}
+
+\pagestyle{empty}
+
+% New environment for the long list
+\newenvironment{cvlist}{%
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+}{%
+	\end{tabular*}
+}
+
+%enumerateで数字に丸印つける。
+\newcommand{\ctext}[1]{\ooalign{
+\hfil\resizebox{\width}{\height}{#1}\hfil
+\crcr
+\raise.2mm\hbox{\large$\bigcirc$}}}
+
+
+%\cvitem{<dates>}{<title>}{<location>}{<description>}
+\newcommand{\cvitem}[4]{%
+	#1&\parbox[t]{0.83\textwidth}{%
+		\normalfont{#2}%
+		\hfill%
+		{\footnotesize#3}\\%
+		#4\vspace{\parsep}%
+	}\\
+}
+
+
+%%%%%%%%% header %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\sloppy
+
+\begin{center}
+\textcomicneue{\Huge\textbf{Curriculum Vitae}}\\[14pt]
+
+\textcomicneue{\Huge\textbf{ Hiroki Takeda}}\\[5pt]
+
+\end{center}
+\date{\today}
+
+\vspace{10pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multicols}{2}
+\noindent 
+\textcomicneue{\large\textbf{Address:}}\\
+\noindent 
+Theoretical Astrophysics Group\par
+\noindent 
+Department of Physics\par
+\noindent 
+Kyoto University\par
+\noindent 
+Kyoto 606-8502, Japan\\
+\columnbreak
+
+\noindent 
+\textcomicneue{\large\textbf{Phone:}} +81-75-753-3876\\
+\noindent 
+\textcomicneue{\large\textbf{E-mail:} }takeda@tap.scphys.kyoto-u.ac.jp\\
+\noindent 
+\textcomicneue{\large\textbf{Web site:}} https://hiroki-takeda.github.io/index.html\\
+\noindent 
+\textcomicneue{\large\textbf{Nationality:}} Japan\\
+\noindent 
+\textcomicneue{\large\textbf{Birth:}} October 5, 1993\\
+\end{multicols}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Education}
+
+\begin{cvlist} % Environment for a list with descriptions
+	%\cvitem{<dates>}{<title>}{<location>}{<description>}
+	\cvitem{2018-2021}{Doctor of Philosophy, University of Tokyo,}{}{\emph{Tests of Alternative Theories of Gravity through Gravitational-Wave \\ Polarizations}, \\Completion Date: March, 2021.}\\
+	\cvitem{2016-2018}{Master of Science in Physics, University of Tokyo,}{}{\emph{Development of Monolithic Optical System for Lorentz Invariance Test}, \\Completion Date: March, 2018.}\\
+	\cvitem{2012-2016}{Bachelor of Science in Physics, Yokohama National University,}{}{\emph{Proposal of Rayleigh Scattering Length Measurement in Liquid Xenon}, \\Completion Date: March, 2016.}
+\end{cvlist}
+
+\section*{Employment}
+\begin{cvlist} % Environment for a list with descriptions
+	%\cvitem{<dates>}{<title>}{<location>}{<description>}
+	\cvitem{2023-present}{Program-specific Assistant Professor,}{}{The Hakubi Center for Advanced Research, Kyoto University.}\\
+	\cvitem{2023-present}{Collaborative Assistant Professor,}{}{Faculty of Science, Kyoto University.}\\	
+	\cvitem{2021-2023}{JSPS Research Fellowship for Young Scientists PD,}{}{Department of Physics, Kyoto University.}\\
+	\cvitem{2018-2021}{JSPS Research Fellowship for Young Scientists DC1,}{}{Department of Physics, University of Tokyo.}\\
+	\cvitem{2016-2021}{Advanced Leading Graduate Course for Photon Science student,}{}{Department of Physics, University of Tokyo.}
+\end{cvlist}
+
+\section*{Awards}
+\begin{cvlist} % Environment for a list with descriptions
+	%\cvitem{<dates>}{<title>}{<location>}{<description>}
+	\cvitem{2021}{Best Student Presentation Award,}{}{Physical Society of Japan.}\\
+	\cvitem{2015}{Academic Excellence Award,}{}{Physics and Applied Physics Program, Yokohama National University.}\\
+	\cvitem{2015}{Physical Engineering Alumni Association Excellence Award,}{}{Physics and Applied Physics Program, Yokohama National University.}\\
+	\cvitem{2014}{Best Poster Award for Investigation Training Program,}{}{Physics and Applied Physics Program, Yokohama National University.}
+\end{cvlist}
+
+\section*{Grants}
+\begin{cvlist} % Environment for a list with descriptions
+	%\cvitem{<dates>}{<title>}{<location>}{<description>}
+	\cvitem{2024-2029}{Hakubi project, Kyoto University, Principal Investigator,}{}{Project: \emph{Testing theories of gravity in extreme environments through polarization modes of gravitational waves from compact binary coalescences,}\\ Total budget: 14,320,000 JPY.}\\
+	\cvitem{2022-2026}{JSPS Grant-in-Aid for Young Scientists, Principal Investigator,}{}{Project: \emph{Testing theories of gravity on cosmological distance scales by searching for polarization modes in gravitational wave propagation,}\\ Total budget: 3,600,000 JPY.}\\
+	\cvitem{2021-2024}{Grant-in-Aid for JSPS Research Fellowship, Principal Investigator,}{}{Project: \emph{Tests of gravity theories in strong gravity field by search for gravitational-wave polarization modes from compact binary mergers,}\\ Total budget: 3,640,000 JPY.}\\
+	\cvitem{2018-2021}{Grant-in-Aid for JSPS Research Fellowship, Principal Investigator,}{}{Project: \emph{Tests of Lorentz invariance of photons using an optical ring cavity,}\\ Total budget: 2,800,000 JPY.}
+\end{cvlist}
+
+\section*{Teaching}
+\begin{cvlist} % Environment for a list with descriptions
+	%\cvitem{<dates>}{<title>}{<location>}{<description>}
+	\cvitem{2022-2023}{Part-time Lecturer, Physics III (Mechanics) for 4th year students,}{}{National Institute of Technology (KOSEN), Maizuru College.}\\
+	\cvitem{2018-2019}{Teaching Assistant for Laboratory Class,}{}{Department of Physics, University of Tokyo.}\\
+	\cvitem{2012-2018}{Cram School Teacher for Junior High School Students,}{}{Musashi Seminar, Saitama, Japan.}
+\end{cvlist}
+
+\section*{Memberships}
+\begin{cvlist} % Environment for a list with descriptions
+	%\cvitem{<dates>}{<title>}{<location>}{<description>}
+	\cvitem{2020}{Student Representative, KAGRA Scientific Congress.}{}{}\\
+	\cvitem{2019-present}{Member, The Astronomical Society of Japan.}{}{}\\
+	\cvitem{2018-present}{Member, LISA Consortium.}{}{}\\
+	\cvitem{2017-present}{Member, KAGRA Collaboration.}{}{}\\
+	\cvitem{2016-present}{Member, The Physical Society of Japan.}{}{}
+\end{cvlist}
+
+\section*{Metrics}
+%BEGIN_METRICS%
+%END_METRICS%
+
+\section*{Publications}
+%BEGIN_PUBLICATIONS%
+%END_PUBLICATIONS%
+
+\section*{Presentations}
+%BEGIN_PRESENTATIONS%
+%END_PRESENTATIONS%
+
+\section*{Outreach}
+%BEGIN_ACTIVITIES%
+%END_ACTIVITIES%
+
+
+\end{document}
