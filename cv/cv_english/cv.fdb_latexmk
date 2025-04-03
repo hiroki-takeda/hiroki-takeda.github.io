@@ -1,10 +1,10 @@
 # Fdb version 4
-["dvipdf"] 1742746759.93657 "cv.dvi" "cv.pdf" "cv" 1742746760.47592 0
-  "cv.dvi" 1742746759.86662 70692 a5751cf256d81b0fe099b61237dce569 "latex"
+["dvipdf"] 1743690935.9469 "cv.dvi" "cv.pdf" "cv" 1743690936.60729 0
+  "cv.dvi" 1743690935.87626 70692 ab1a80c3e3d5d4a025200e1d0c3f2b6f "latex"
   (generated)
   "cv.pdf"
   (rewritten before read)
-["latex"] 1742746759.20819 "cv.tex" "cv.dvi" "cv" 1742746760.47471 2
+["latex"] 1743690935.21608 "cv.tex" "cv.dvi" "cv" 1743690936.60608 2
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/arkandis/gillius/GilliusADF-Bold-lf-ot1.tfm" 1383613667 3640 d8f37ba97c6fb59fe2095aa72b034ffb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/arkandis/gillius/GilliusADF-Regular-lf-ot1.tfm" 1383613667 3596 424193af9ed257ff48d4000d60218e4d ""
@@ -94,9 +94,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1713064664 41983 7ec6bfd6bf34339a61f0f08f42298e60 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1713337407 8157107 f6afb057404cdc75539cc4bfb4e99bc6 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "cv.aux" 1742746759.86579 129 6b968e77d9affaffa4936c21a226e2d9 "latex"
-  "cv.out" 1742746759.86621 54 05b9ff7757fe6a446d8f294b02146d28 "latex"
-  "cv.tex" 1742746758.24231 37614 cb14a4b06c0d58b4d56ba138a8c8f26c ""
+  "cv.aux" 1743690935.87512 129 6b968e77d9affaffa4936c21a226e2d9 "latex"
+  "cv.out" 1743690935.87587 54 05b9ff7757fe6a446d8f294b02146d28 "latex"
+  "cv.tex" 1743690934.24405 37614 cb14a4b06c0d58b4d56ba138a8c8f26c ""
   (generated)
   "cv.aux"
   "cv.dvi"
