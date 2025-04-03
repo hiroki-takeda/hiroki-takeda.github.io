@@ -134,11 +134,11 @@ def generate_section_html(title, entries):
     # Papersセクションの直後にだけリンクを挿入
     if title == "Papers":
         html += """
-    See also:
-    <a href="https://arxiv.org/search/?query=%22Hiroki+Takeda%22&searchtype=author&abstracts=show&order=-announced_date_first&size=50">arXiv</a>, 
-    <a href="https://scholar.google.com/citations?user=Cq6rALgAAAAJ&hl=ja&oi=ao">Google Scholar</a>, and
-    <a href="https://inspirehep.net/authors/1684306">INSPIRE</a>.
-"""
+        See also:
+        <a href="https://arxiv.org/search/?query=%22Hiroki+Takeda%22&searchtype=author&abstracts=show&order=-announced_date_first&size=50">arXiv</a>, 
+        <a href="https://scholar.google.com/citations?user=Cq6rALgAAAAJ&hl=ja&oi=ao">Google Scholar</a>, and
+        <a href="https://inspirehep.net/authors/1684306">INSPIRE</a>.
+        """
     html += "<ul>\n"
     for entry in entries:
         html += format_entry_html(entry) + "\n"
