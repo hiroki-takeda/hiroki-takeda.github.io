@@ -103,7 +103,7 @@ def generate_international_section_html():
     return f"<h2>International Conference</h2>\n{oral_html}\n{poster_html}"
 
 # --- 本文HTML構築 ---
-body_html = ""
+body_html = "<h1 id=\"presentations\">Presentations</h1>\n"
 body_html += generate_section_html("Invited Talks", categories["invited"])
 body_html += generate_international_section_html()
 body_html += generate_section_html("Domestic Conference - Oral", categories["dom_oral"])
