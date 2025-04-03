@@ -138,12 +138,10 @@ def generate_section_html(title, entries):
 body_html = "<h1 id=\"publications\">Publications</h1>\n"
 body_html = """
 <h1 id="publications">Publications</h1>
-<p>For a full list and updates, see also:</p>
-<ul>
-  <li><a href="https://arxiv.org/search/?query=%22Hiroki+Takeda%22&searchtype=author&abstracts=show&order=-announced_date_first&size=50">arXiv</a></li>
-  <li><a href="https://scholar.google.com/citations?user=Cq6rALgAAAAJ&hl=ja&oi=ao">Google Scholar</a></li>
-  <li><a href="https://inspirehep.net/authors/1684306">INSPIRE</a></li>
-</ul>
+<p>See also:</p>
+  <a href="https://arxiv.org/search/?query=%22Hiroki+Takeda%22&searchtype=author&abstracts=show&order=-announced_date_first&size=50">arXiv</a>, 
+  <a href="https://scholar.google.com/citations?user=Cq6rALgAAAAJ&hl=ja&oi=ao">Google Scholar</a>,
+  <a href="https://inspirehep.net/authors/1684306">INSPIRE</a>.
 """
 body_html += generate_section_html("Books", categorized["book"])
 body_html += generate_section_html("Papers", categorized["short"])
