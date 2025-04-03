@@ -128,7 +128,18 @@ def format_entry_html(entry):
 def generate_section_html(title, entries):
     if not entries:
         return ""
-    html = f"<h2>{title}</h2>\n<ul>\n"
+    
+    html = f"<h2>{title}</h2>\n"
+
+    # Papersセクションの直後にだけリンクを挿入
+    if title == "Papers":
+        html += """
+    See also:
+    <a href="https://arxiv.org/search/?query=%22Hiroki+Takeda%22&searchtype=author&abstracts=show&order=-announced_date_first&size=50">arXiv</a>, 
+    <a href="https://scholar.google.com/citations?user=Cq6rALgAAAAJ&hl=ja&oi=ao">Google Scholar</a>, and
+    <a href="https://inspirehep.net/authors/1684306">INSPIRE</a>.
+"""
+    html += "<ul>\n"
     for entry in entries:
         html += format_entry_html(entry) + "\n"
     html += "</ul>\n"
@@ -138,12 +149,6 @@ def generate_section_html(title, entries):
 body_html = "<h1 id=\"publications\">Publications</h1>\n"
 body_html += generate_section_html("Books", categorized["book"])
 body_html += generate_section_html("Papers", categorized["short"])
-body_html += """
-See also:
-  <a href="https://arxiv.org/search/?query=%22Hiroki+Takeda%22&searchtype=author&abstracts=show&order=-announced_date_first&size=50">arXiv</a>, 
-  <a href="https://scholar.google.com/citations?user=Cq6rALgAAAAJ&hl=ja&oi=ao">Google Scholar</a>,
-  <a href="https://inspirehep.net/authors/1684306">INSPIRE</a>.
-"""
 body_html += generate_section_html("Collaboration Papers", categorized["collaboration"])
 
 # --- テンプレート読み込みと結合 ---
