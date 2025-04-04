@@ -11,9 +11,26 @@ window.addEventListener('DOMContentLoaded', () => {
     insertHTML('#header-placeholder', 'header.html'),
     insertHTML('#footer-placeholder', 'footer.html')
   ]).then(() => {
-    // header/footer の挿入が完了した後に script.js を実行
-    const script = document.createElement('script');
-    script.src = 'script.js';
-    document.body.appendChild(script);
+    // ✅ header/footer 挿入後に初めて nav を取得・制御
+    const navIcon = document.getElementById('nav-icon');
+    const navMenu = document.getElementById('nav-menu');
+
+    function adjustMenu() {
+      if (window.innerWidth <= 768) {
+        navIcon.style.display = 'flex';
+        navMenu.classList.remove('active');
+      } else {
+        navIcon.style.display = 'none';
+        navMenu.classList.add('active');
+      }
+    }
+
+    adjustMenu();
+
+    navIcon.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    window.addEventListener('resize', adjustMenu);
   });
 });
