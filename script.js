@@ -4,11 +4,11 @@ window.addEventListener('DOMContentLoaded', () => {
   
     function adjustMenu() {
       if (window.innerWidth <= 768) {
-        navMenu.classList.remove('active');
         navIcon.style.display = 'flex';
+        navMenu.classList.remove('active'); // ← 非表示に
       } else {
-        navMenu.classList.add('active');
         navIcon.style.display = 'none';
+        navMenu.classList.add('active'); // ← 常時表示
       }
     }
   

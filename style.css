@@ -138,13 +138,23 @@ main p {
 }
 
 /* ハンバーガーメニュー (小画面用) */
+/* 通常非表示 */
+#nav-menu {
+  display: none;
+}
+
+/* ハンバーガークリック時に表示 */
+#nav-menu.active {
+  display: flex;
+}
+
+/* レイアウト（スマホ用） */
 @media (max-width: 768px) {
   #nav-icon {
     display: flex;
   }
 
   #nav-menu {
-    display: none;
     flex-direction: column;
     background: #fff;
     position: absolute;
@@ -154,10 +164,6 @@ main p {
     border-radius: 8px;
     overflow: hidden;
     z-index: 999;
-  }
-
-  #nav-menu.active {
-    display: flex !important; /* ← 必須！displayを上書きする */
   }
 
   #nav-menu ul {
