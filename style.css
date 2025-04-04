@@ -145,7 +145,7 @@ main p {
 
 /* ハンバーガークリック時に表示 */
 #nav-menu.active {
-  display: flex;
+  display: flex !important;
 }
 
 /* レイアウト（スマホ用） */
