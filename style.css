@@ -17,6 +17,8 @@ header {
   padding: 20px 40px;
   background-color: #fff;
   border-bottom: 1px solid #eee;
+  position: relative;
+  z-index: 1000;
 }
 
 header h1 {
@@ -26,7 +28,7 @@ header h1 {
   letter-spacing: 1px;
 }
 
-/* ナビゲーション */
+/* ナビゲーションアイコン（ハンバーガー） */
 #nav-icon {
   display: none;
   flex-direction: column;
@@ -45,6 +47,7 @@ header h1 {
   transition: all 0.3s ease;
 }
 
+/* 通常ナビゲーション */
 nav ul {
   list-style: none;
   margin: 0;
@@ -82,6 +85,8 @@ main h1, main h2, main h3 {
 
 main p {
   margin-bottom: 24px;
+  word-break: keep-all;
+  white-space: normal;
 }
 
 main ul {
@@ -96,7 +101,7 @@ main img {
   display: block;
   margin: 30px auto;
   width: 100%;
-  max-width: 100%;  /* 上限を指定することで画面に応じて拡縮される */
+  max-width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -113,6 +118,7 @@ footer {
   margin-top: 60px;
 }
 
+/* プロフィールリスト */
 .profile-list .label {
   font-weight: 600;
   margin-right: 8px;
@@ -121,34 +127,27 @@ footer {
   color: #333;
 }
 
+/* リンク */
 a {
-  color: inherit;      /* 親要素の文字色に合わせる */
-  text-decoration: none;  /* 下線を消す */
+  color: inherit;
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;  /* ホバー時だけ下線を出すなどは好みで */
-  color: #555; /* 少しだけ変化をつけても上品 */
+  text-decoration: underline;
+  color: #555;
 }
 
-main p {
-  margin-bottom: 24px;
-  word-break: keep-all;  /* ←日本語の不自然な分割を防ぐ */
-  white-space: normal;   /* ←連続スペースの崩れ防止 */
-}
-
-/* ハンバーガーメニュー (小画面用) */
-/* 通常非表示 */
+/* === ハンバーガーメニュー（スマホ用 全画面展開）=== */
 #nav-menu {
   display: none;
 }
 
-/* ハンバーガークリック時に表示 */
 #nav-menu.active {
   display: flex !important;
 }
 
-/* レイアウト（スマホ用） */
+/* スマホ向けスタイル */
 @media (max-width: 768px) {
   #nav-icon {
     display: flex;
@@ -156,21 +155,25 @@ main p {
 
   #nav-menu {
     flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.96);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: 999;
+    text-align: center;
   }
 
   #nav-menu ul {
     flex-direction: column;
+    padding: 0;
   }
 
   #nav-menu ul li {
-    padding: 12px 20px;
+    padding: 16px;
+    font-size: 20px;
   }
 }
