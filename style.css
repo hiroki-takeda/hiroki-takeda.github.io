@@ -139,15 +139,23 @@ a:hover {
 }
 
 /* === ハンバーガーメニュー（スマホ用 全画面展開）=== */
+
+/* 通常は非表示 */
 #nav-menu {
   display: none;
 }
 
+/* ハンバーガーがクリックされたときに表示 */
 #nav-menu.active {
   display: flex !important;
 }
 
-/* スマホ向けスタイル */
+/* ✕ボタン：デフォルトでは非表示にしておく */
+#nav-close {
+  display: none;
+}
+
+/* --- スマホ向け（全画面メニューと✕ボタン） --- */
 @media (max-width: 768px) {
   #nav-icon {
     display: flex;
@@ -177,20 +185,15 @@ a:hover {
     font-size: 20px;
   }
 
-  #nav-close {
-    display: none;
+  /* ✕ボタンはアクティブなときだけ表示 */
+  #nav-menu.active #nav-close {
+    display: block;
     position: absolute;
     top: 20px;
     right: 20px;
     font-size: 28px;
     cursor: pointer;
-  }
-  
-  @media (max-width: 768px) {
-    #nav-close {
-      display: block;
-      color: #000;
-      z-index: 1001;
-    }
+    color: #000;
+    z-index: 1001;
   }
 }
