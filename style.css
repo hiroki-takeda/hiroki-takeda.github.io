@@ -131,6 +131,12 @@ a:hover {
   color: #555; /* 少しだけ変化をつけても上品 */
 }
 
+main p {
+  margin-bottom: 24px;
+  word-break: keep-all;  /* ←日本語の不自然な分割を防ぐ */
+  white-space: normal;   /* ←連続スペースの崩れ防止 */
+}
+
 /* ハンバーガーメニュー (小画面用) */
 @media (max-width: 768px) {
   #nav-icon {

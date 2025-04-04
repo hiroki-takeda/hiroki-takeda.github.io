@@ -4,10 +4,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // 画面の幅に基づいて、ナビゲーションメニューの表示を制御します。
     function adjustMenu() {
-        if (window.innerWidth <= 480) {
-           navMenu.style.display = "flex";
-            navIcon.style.display = "none";
-        } else if (window.innerWidth <= 874) {
+        if (window.innerWidth <= 874) {
             navMenu.style.display = "none";
             navIcon.style.display = "flex";
         } else {
