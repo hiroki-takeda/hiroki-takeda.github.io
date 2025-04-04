@@ -1,23 +1,23 @@
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     const navIcon = document.getElementById('nav-icon');
     const navMenu = document.getElementById('nav-menu');
   
     function adjustMenu() {
-      if (window.innerWidth <= 874) {
+      if (window.innerWidth <= 768) {
         navMenu.classList.remove('active');
-        navMenu.style.display = "none";  // 初期状態
-        navIcon.style.display = "flex";
+        navIcon.style.display = 'flex';
       } else {
-        navMenu.style.display = "flex";
-        navIcon.style.display = "none";
+        navMenu.classList.add('active');
+        navIcon.style.display = 'none';
       }
     }
   
     adjustMenu();
   
-    navIcon.addEventListener('click', function () {
+    navIcon.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
   
     window.addEventListener('resize', adjustMenu);
   });
+  

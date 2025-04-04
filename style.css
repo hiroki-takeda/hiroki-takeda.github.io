@@ -96,7 +96,7 @@ main img {
   display: block;
   margin: 30px auto;
   width: 100%;
-  max-width: 400px;  /* 上限を指定することで画面に応じて拡縮される */
+  max-width: 100%;  /* 上限を指定することで画面に応じて拡縮される */
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -157,7 +157,7 @@ main p {
   }
 
   #nav-menu.active {
-    display: flex;
+    display: flex !important; /* ← 必須！displayを上書きする */
   }
 
   #nav-menu ul {
@@ -165,4 +165,6 @@ main p {
   }
 
   #nav-menu ul li {
-    padding:
+    padding: 12px 20px;
+  }
+}
