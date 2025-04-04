@@ -11,9 +11,11 @@ window.addEventListener('DOMContentLoaded', () => {
     insertHTML('#header-placeholder', 'header.html'),
     insertHTML('#footer-placeholder', 'footer.html')
   ]).then(() => {
-    // ✅ header/footer 挿入後に初めて nav を取得・制御
+    // ✅ header/footer の挿入後に script.js 相当の処理を書く
+
     const navIcon = document.getElementById('nav-icon');
     const navMenu = document.getElementById('nav-menu');
+    const navClose = document.getElementById('nav-close'); // ← 追加
 
     function adjustMenu() {
       if (window.innerWidth <= 768) {
@@ -29,6 +31,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     navIcon.addEventListener('click', () => {
       navMenu.classList.toggle('active');
+    });
+
+    // ✅ ここが今回追加する行！
+    navClose.addEventListener('click', () => {
+      navMenu.classList.remove('active');
     });
 
     window.addEventListener('resize', adjustMenu);
