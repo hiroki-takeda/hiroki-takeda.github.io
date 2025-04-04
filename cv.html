@@ -22,7 +22,7 @@
   <li><span class="label">Date of Birth:</span> 1993年10月5日</li>
   <li><span class="label">Affiliation:</span> 京都大学</li>
   <li><span class="label">Position:</span> 白眉センター 特定助教 / 理学研究科 連携助教</li>
-  <li><span class="label">Email:</span> takeda (at) tap.scphys.kyoto-u.ac.jp</li>
+  <li><span class="label">Email:</span> <span id="email"></span></li>
   <li><span class="label">Research Fields:</span> 宇宙物理学、重力、量子測定</li>
   <li><span class="label">Research Focus:</span> 量子測定を用いた重力理論の検証</li>
 </ul>
@@ -126,6 +126,14 @@
 <div id="footer-placeholder"></div>
 
 <script src="load_components.js" defer></script>
+
+<script>
+  const user = "takeda";
+  const domain = "tap.scphys.kyoto-u.ac.jp";
+  const email = `${user}@${domain}`;
+  document.getElementById("email").innerHTML =
+    `<a href="mailto:${email}">${email}</a>`;
+</script>
 
 </body>
 </html>

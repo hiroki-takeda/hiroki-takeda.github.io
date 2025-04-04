@@ -26,14 +26,23 @@
     <ul>
       <li>Address: 〒606-8502 京都市左京区北白川追分町 京都大学理学部物理学第二教室天体核研究室</li>
       <li>Phone: 075-753-3883 (+81-75-753-3883)</li>
-      <li>E-mail: takeda _(at)_ tap.scphys.kyoto-u.ac.jp  (_(at)_→@)</li>
+      <li>
+        E-mail: <span id="email"></span>
+      </li>
     </ul>
- 
+
   </main>
 
   <div id="footer-placeholder"></div>
 
   <script src="load_components.js" defer></script>
+  <script>
+    const user = "takeda";
+    const domain = "tap.scphys.kyoto-u.ac.jp";
+    const email = `${user}@${domain}`;
+    document.getElementById("email").innerHTML =
+      `<a href="mailto:${email}">${email}</a>`;
+  </script>
 
 </body>
 </html>
