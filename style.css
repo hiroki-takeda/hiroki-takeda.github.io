@@ -197,10 +197,12 @@ a:hover {
   }
 
   #nav-menu ul li a {
-    display: flex;          /* リンク全体をクリックできるように */
-    justify-content: center;
-    width: 100%;             /* 親と同じ幅 */
-    text-align: center;      /* テキストを中央に */
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    text-align: center;
     color: #000;
   }
 
