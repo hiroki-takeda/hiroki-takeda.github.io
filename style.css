@@ -169,15 +169,18 @@ a:hover {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999;
+    width: 100%;
+    height: 100%;
+    display: flex;
     text-align: center;
   }
 
   #nav-menu ul {
     flex-direction: column;
     padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
   }
 
   #nav-menu ul li {
