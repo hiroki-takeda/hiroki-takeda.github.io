@@ -197,7 +197,8 @@ a:hover {
   }
 
   #nav-menu ul li a {
-    display: block;          /* リンク全体をクリックできるように */
+    display: flex;          /* リンク全体をクリックできるように */
+    justify-content: center;
     width: 100%;             /* 親と同じ幅 */
     text-align: center;      /* テキストを中央に */
     color: #000;
