@@ -33,10 +33,11 @@ window.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.toggle('active');
     });
 
-    // ✅ ここが今回追加する行！
+  if (navClose) {
     navClose.addEventListener('click', () => {
-      navMenu.classList.remove('active');
+    navMenu.classList.remove('active');
     });
+  }
 
     window.addEventListener('resize', adjustMenu);
   });

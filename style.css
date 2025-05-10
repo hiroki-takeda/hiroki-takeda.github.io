@@ -162,6 +162,7 @@ a:hover {
   }
 
   #nav-menu {
+    display: none; /* 初期状態は非表示 */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -171,25 +172,38 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    display: none;
+    z-index: 999;
     text-align: center;
+  }
+
+  #nav-menu.active {
+    display: flex; /* ハンバーガークリック時に表示 */
   }
 
   #nav-menu ul {
+    display: flex;           /* ← これが抜けていた */
     flex-direction: column;
+    align-items: center;     /* 子要素（li）を中央に */
     padding: 0;
     margin: 0;
     list-style: none;
-    text-align: center;
-    align-items: center;
   }
 
   #nav-menu ul li {
+    width: 100%;             /* 横幅を画面いっぱいに */
+    text-align: center;      /* テキスト中央揃え */
     padding: 16px;
     font-size: 20px;
   }
 
-  /* ✕ボタンはアクティブなときだけ表示 */
+  #nav-menu ul li a {
+    display: block;          /* リンク全体をクリックできるように */
+    width: 100%;             /* 親と同じ幅 */
+    text-align: center;      /* テキストを中央に */
+    color: #000;
+  }
+
+  /* ✕ボタン（閉じる） */
   #nav-menu.active #nav-close {
     display: block;
     position: absolute;
