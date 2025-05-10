@@ -197,11 +197,11 @@ a:hover {
   }
 
   #nav-menu ul li a {
-    display: block;
+    display: flex;
+    justify-content: center;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
+    align-items: center;
+    width: 100%;
     text-align: center;
     color: #000;
   }
