@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  11 MAY 2025 16:17
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  11 MAY 2025 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -679,19 +679,19 @@ sADF-LF/m/n/12 ” \OT1/cmr/m/n/12 ,
 
 [4] [5]
 ! Not two-byte family.
-l.198 ...om the Coalescence of a 2.5–4.5 M $_⊙
+l.199 ...om the Coalescence of a 2.5–4.5 M $_⊙
                                                   $ Compact Object and a Neu...
 IGNORE.
 
 [6]
-Underfull \hbox (badness 2401) in paragraph at lines 211--212
+Underfull \hbox (badness 2401) in paragraph at lines 212--213
 \JY2/GilliusADF-LF/m/n/12 “\OT1/cmr/m/n/12 Search for Grav-i-ta-tional Waves 
 As-so-ci-ated with Fast Ra-dio Bursts De-tected by
  []
 
 [7] [8] [9] [10] [11] [12] [13]
 ! Misplaced alignment tab character &.
-l.332 ...dition”, Akihabara UDX Event, Concept &
+l.333 ...dition”, Akihabara UDX Event, Concept &
                                                    Planning, October 2023.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -716,10 +716,10 @@ Package rerunfilecheck Info: File `cv.out' has not changed.
 Here is how much of TeX's memory you used:
  12502 strings out of 474762
  193331 string characters out of 5758587
- 1935338 words of memory out of 5000000
+ 1934338 words of memory out of 5000000
  34733 multiletter control sequences out of 15000+600000
  604420 words of font info for 96 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  72i,9n,79p,899b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on cv.dvi (14 pages, 71008 bytes).
+Output written on cv.dvi (14 pages, 71556 bytes).
