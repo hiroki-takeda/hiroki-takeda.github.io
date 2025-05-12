@@ -82,13 +82,6 @@ def generate_section_html(title, entries):
         return ""
     html = f"<h2>{title}</h2>\n<ul>\n"
 
-    if title == "Activities":
-        html += """
-        面白そうなら何でもします。気軽にお声がけください。
-        """
-    
-    html += "</ul>\n"
-
     for entry in entries:
         html += format_entry_html(entry) + "\n"
     html += "</ul>\n"
@@ -96,6 +89,7 @@ def generate_section_html(title, entries):
 
 # --- HTML構築 ---
 body_html = "<h1 id=\"activities\">Activities</h1>\n"
+body_html += """ 面白そうなら何でもします。気軽にお声がけください。"""
 body_html += generate_section_html("講演", categorized["lecture"])
 body_html += generate_section_html("出演", categorized["appearance"])
 body_html += generate_section_html("記事", categorized["writing"])
