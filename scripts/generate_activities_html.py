@@ -89,7 +89,7 @@ def generate_section_html(title, entries):
 
 # --- HTML構築 ---
 body_html = "<h1 id=\"activities\">Activities</h1>\n"
-body_html += """ <p>ご依頼・お問い合わせの際は、<a href="#contact">Contact</a> よりご連絡ください。</p> """
+body_html += """ <p>ご依頼・お問い合わせは<a href="#contact">Contact</a> よりご連絡ください。</p> """
 body_html += generate_section_html("講演", categorized["lecture"])
 body_html += generate_section_html("出演", categorized["appearance"])
 body_html += generate_section_html("記事", categorized["writing"])
