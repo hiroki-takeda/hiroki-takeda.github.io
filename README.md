@@ -20,7 +20,7 @@
 
 - 更新の基本的な流れ
 1. `bib/` フォルダの BibTeXファイルを編集して論文・講演・活動情報を更新
-    - 論文: `papers.bib`, `books_jap.bib` / `books_eng.bib`, `collaboration.bib`
+    - 論文: `papers.bib`(keywords = {short}を追加), `books_jap.bib` / `books_eng.bib`, `collaboration.bib`
     - 発表: `presentations.bib`
     - 活動: `activities_jap.bib` / `activities_eng.bib`
 

@@ -81,6 +81,14 @@ def generate_section_html(title, entries):
     if not entries:
         return ""
     html = f"<h2>{title}</h2>\n<ul>\n"
+
+    if title == "Activities":
+        html += """
+        面白そうなら何でもします。気軽にお声がけください。
+        """
+    
+    html += "</ul>\n"
+
     for entry in entries:
         html += format_entry_html(entry) + "\n"
     html += "</ul>\n"

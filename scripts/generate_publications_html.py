@@ -139,6 +139,7 @@ def generate_section_html(title, entries):
         <a href="https://scholar.google.com/citations?user=Cq6rALgAAAAJ&hl=ja&oi=ao">Google Scholar</a>, and
         <a href="https://inspirehep.net/authors/1684306">INSPIRE</a>.
         """
+        
     html += "<ul>\n"
     for entry in entries:
         html += format_entry_html(entry) + "\n"
