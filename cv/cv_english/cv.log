@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  12 MAY 2025 22:10
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  7 SEP 2025 19:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -671,27 +671,67 @@ ine 167.
 LaTeX Font Info:    Font shape `OT1/GilliusADF-LF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 167.
 [3]
-Underfull \hbox (badness 1558) in paragraph at lines 174--175
-[]|   []   |   []\OT1/cmr/m/n/12 , Takahiro Tanaka,  \JY2/GilliusADF-LF/m/n/12 
-“\OT1/cmr/m/n/12 Quan-tum de-co-her-ence of grav-i-ta-tional waves\JY2/Gilliu
-sADF-LF/m/n/12 ” \OT1/cmr/m/n/12 ,
+Underfull \hbox (badness 2671) in paragraph at lines 174--175
+\OT1/cmr/m/n/12 Ob-ser-va-tions of Quasi-Periodic Erup-tions with X-rays and Gr
+av-i-ta-tional Waves\JY2/GilliusADF-LF/m/n/12 ” \OT1/cmr/m/n/12 ,
  []
 
 [4] [5]
+Underfull \hbox (badness 3439) in paragraph at lines 198--199
+\OT1/cmr/m/n/12 4.0: Meth-ods for Iden-ti-fy-ing and Char-ac-ter-iz-ing Gravita
+tional-wave Tran-sients\JY2/GilliusADF-LF/m/n/12 ” \OT1/cmr/m/n/12 ,
+ []
+
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.202 ...erger with Total Mass 190-265 $M_^^c3^^b8
+                                                  dot$”, arXiv:2507.08219.
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+LaTeX Warning: Command \o invalid in math mode on input line 202.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.202 ...r with Total Mass 190-265 $M_^^c3^^b8dot$
+                                                  ”, arXiv:2507.08219.
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[6]
 ! Not two-byte family.
-l.199 ...om the Coalescence of a 2.5–4.5 M $_⊙
+l.209 ...om the Coalescence of a 2.5–4.5 M $_⊙
                                                   $ Compact Object and a Neu...
 IGNORE.
 
-[6]
-Underfull \hbox (badness 2401) in paragraph at lines 212--213
+[7]
+Underfull \hbox (badness 2401) in paragraph at lines 222--223
 \JY2/GilliusADF-LF/m/n/12 “\OT1/cmr/m/n/12 Search for Grav-i-ta-tional Waves 
 As-so-ci-ated with Fast Ra-dio Bursts De-tected by
  []
 
-[7] [8] [9] [10] [11] [12] [13]
+[8] [9] [10] [11]
 ! Misplaced alignment tab character &.
-l.333 ...dition”, Akihabara UDX Event, Concept &
+l.288 &
+        16th Edoardo Amaldi Conference on Gravitational Waves, Glasgow, UK, ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[12] [13] [14]
+! Misplaced alignment tab character &.
+l.351 ...dition”, Akihabara UDX Event, Concept &
                                                    Planning, October 2023.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -700,7 +740,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[14] (./cv.aux)
+[15] (./cv.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -714,12 +754,12 @@ Package rerunfilecheck Info: File `cv.out' has not changed.
 (rerunfilecheck)             Checksum: 05B9FF7757FE6A446D8F294B02146D28;54.
  ) 
 Here is how much of TeX's memory you used:
- 12502 strings out of 474762
- 193331 string characters out of 5758587
+ 12503 strings out of 474762
+ 193339 string characters out of 5758587
  1934338 words of memory out of 5000000
- 34733 multiletter control sequences out of 15000+600000
+ 34734 multiletter control sequences out of 15000+600000
  604420 words of font info for 96 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  72i,9n,79p,899b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on cv.dvi (14 pages, 71556 bytes).
+Output written on cv.dvi (15 pages, 79144 bytes).

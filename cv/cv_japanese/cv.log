@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  11 MAY 2025 16:40
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  7 SEP 2025 19:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -545,20 +545,54 @@ LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 (Font)              scaled to size 11.09619pt on input line 164.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 11.09619pt on input line 164.
-[3]
-Underfull \hbox (badness 2181) in paragraph at lines 171--172
-[]|   []   |   []\OT1/cmr/m/n/10 , Takahiro Tanaka,  \JY2/hmc/m/n/10 “\OT1/cm
-r/m/n/10 Quan-tum de-co-her-ence of grav-i-ta-tional waves\JY2/hmc/m/n/10 ” \
-OT1/cmr/m/n/10 ,
+[3] [4] [5]
+Underfull \hbox (badness 4366) in paragraph at lines 195--196
+\OT1/cmr/m/n/10 4.0: Meth-ods for Iden-ti-fy-ing and Char-ac-ter-iz-ing Gravita
+tional-wave Tran-sients\JY2/hmc/m/n/10 ” \OT1/cmr/m/n/10 ,
  []
 
-[4] [5] [6] [7]
-Underfull \hbox (badness 1297) in paragraph at lines 223--224
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.199 ...erger with Total Mass 190-265 $M_^^c3^^b8
+                                                  dot$”, arXiv:2507.08219.
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+LaTeX Warning: Command \o invalid in math mode on input line 199.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.199 ...r with Total Mass 190-265 $M_^^c3^^b8dot$
+                                                  ”, arXiv:2507.08219.
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[6] [7] [8]
+Underfull \hbox (badness 1297) in paragraph at lines 233--234
 []\OT1/cmr/m/n/10 LIGO Sci-en-tific, Virgo, KA-GRA Col-lab-o-ra-tion (in-clud-i
 ng |   []   |   []),  \JY2/hmc/m/n/10 “\OT1/cmr/m/n/10 All-sky,
  []
 
-[8] [9] [10] [11] [12] [13] (./cv.aux)
+[9] [10] [11]
+! Misplaced alignment tab character &.
+l.285 &
+        16th Edoardo Amaldi Conference on Gravitational Waves, Glasgow, UK, ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[12] [13] [14] (./cv.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -568,12 +602,12 @@ Package rerunfilecheck Info: File `cv.out' has not changed.
 (rerunfilecheck)             Checksum: 05B9FF7757FE6A446D8F294B02146D28;54.
  ) 
 Here is how much of TeX's memory you used:
- 11842 strings out of 474762
- 180530 string characters out of 5758587
- 1934338 words of memory out of 5000000
- 34110 multiletter control sequences out of 15000+600000
+ 11843 strings out of 474762
+ 180538 string characters out of 5758587
+ 1935338 words of memory out of 5000000
+ 34111 multiletter control sequences out of 15000+600000
  598883 words of font info for 94 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  72i,9n,79p,899b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on cv.dvi (13 pages, 70624 bytes).
+Output written on cv.dvi (14 pages, 78328 bytes).
