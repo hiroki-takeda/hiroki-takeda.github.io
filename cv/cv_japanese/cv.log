@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  7 SEP 2025 20:56
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  12 SEP 2025 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -516,48 +516,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--103
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--113
+Underfull \hbox (badness 10000) in paragraph at lines 105--114
 
  []
 
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 115--123
+Underfull \hbox (badness 10000) in paragraph at lines 116--124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--134
+Underfull \hbox (badness 10000) in paragraph at lines 126--135
 
  []
 
 [2]
-Overfull \hbox (0.57901pt too wide) in alignment at lines 137--146
+Overfull \hbox (0.57901pt too wide) in alignment at lines 138--147
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--147
+Underfull \hbox (badness 10000) in paragraph at lines 137--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--157
+Underfull \hbox (badness 10000) in paragraph at lines 150--158
 
  []
 
 [3]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 176.
+(Font)              scaled to size 11.09619pt on input line 177.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 176.
+(Font)              scaled to size 11.09619pt on input line 177.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 176.
+(Font)              scaled to size 11.09619pt on input line 177.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 176.
+(Font)              scaled to size 11.09619pt on input line 177.
  [4] [5]
-Underfull \hbox (badness 4366) in paragraph at lines 207--208
+Underfull \hbox (badness 4366) in paragraph at lines 208--209
 \OT1/cmr/m/n/10 4.0: Meth-ods for Iden-ti-fy-ing and Char-ac-ter-iz-ing Gravita
 tional-wave Tran-sients\JY2/hmc/m/n/10 ” \OT1/cmr/m/n/10 ,
  []
@@ -565,7 +565,7 @@ tional-wave Tran-sients\JY2/hmc/m/n/10 ” \OT1/cmr/m/n/10 ,
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.211 ...erger with Total Mass 190-265 $M_^^c3^^b8
+l.212 ...erger with Total Mass 190-265 $M_^^c3^^b8
                                                   dot$”, arXiv:2507.08219.
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -573,12 +573,12 @@ so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
 
-LaTeX Warning: Command \o invalid in math mode on input line 211.
+LaTeX Warning: Command \o invalid in math mode on input line 212.
 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.211 ...r with Total Mass 190-265 $M_^^c3^^b8dot$
+l.212 ...r with Total Mass 190-265 $M_^^c3^^b8dot$
                                                   ”, arXiv:2507.08219.
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -587,14 +587,14 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 [6] [7] [8]
-Underfull \hbox (badness 1297) in paragraph at lines 245--246
+Underfull \hbox (badness 1297) in paragraph at lines 246--247
 []\OT1/cmr/m/n/10 LIGO Sci-en-tific, Virgo, KA-GRA Col-lab-o-ra-tion (in-clud-i
 ng |   []   |   []),  \JY2/hmc/m/n/10 “\OT1/cmr/m/n/10 All-sky,
  []
 
 [9] [10] [11]
 ! Misplaced alignment tab character &.
-l.297 &
+l.298 &
         16th Edoardo Amaldi Conference on Gravitational Waves, Glasgow, UK, ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -621,4 +621,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  72i,9n,79p,899b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on cv.dvi (15 pages, 79400 bytes).
+Output written on cv.dvi (15 pages, 79524 bytes).

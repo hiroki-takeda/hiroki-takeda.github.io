@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  7 SEP 2025 21:20
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  12 SEP 2025 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -626,7 +626,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--110
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--119
+Underfull \hbox (badness 10000) in paragraph at lines 112--120
 
  []
 
@@ -634,56 +634,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--119
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 123.
-LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
 (Font)              No change on input line 124.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
 (Font)              No change on input line 125.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
 (Font)              No change on input line 126.
+LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
+(Font)              No change on input line 127.
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--128
+Underfull \hbox (badness 10000) in paragraph at lines 122--129
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--138
+Underfull \hbox (badness 10000) in paragraph at lines 131--139
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 140--151
+Underfull \hbox (badness 10000) in paragraph at lines 141--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--161
+Underfull \hbox (badness 10000) in paragraph at lines 154--162
 
  []
 
 [3]
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <12> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 166.
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 167.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 166.
+(Font)              scaled to size 11.54663pt on input line 167.
 LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <12> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 166.
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 167.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 166.
+(Font)              scaled to size 11.54663pt on input line 167.
 LaTeX Font Info:    Font shape `OT1/GilliusADF-LF/bx/n' in size <14.4> not avai
 lable
 (Font)              Font shape `OT1/GilliusADF-LF/b/n' tried instead on input l
-ine 180.
+ine 181.
 LaTeX Font Info:    Font shape `OT1/GilliusADF-LF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 180.
+(Font)              scaled to size 14.4pt on input line 181.
 
-Underfull \hbox (badness 2671) in paragraph at lines 187--188
+Underfull \hbox (badness 2671) in paragraph at lines 188--189
 \OT1/cmr/m/n/12 Ob-ser-va-tions of Quasi-Periodic Erup-tions with X-rays and Gr
 av-i-ta-tional Waves\JY2/GilliusADF-LF/m/n/12 ” \OT1/cmr/m/n/12 ,
  []
 
 [4] [5] [6]
-Underfull \hbox (badness 3439) in paragraph at lines 211--212
+Underfull \hbox (badness 3439) in paragraph at lines 212--213
 \OT1/cmr/m/n/12 4.0: Meth-ods for Iden-ti-fy-ing and Char-ac-ter-iz-ing Gravita
 tional-wave Tran-sients\JY2/GilliusADF-LF/m/n/12 ” \OT1/cmr/m/n/12 ,
  []
@@ -691,7 +691,7 @@ tional-wave Tran-sients\JY2/GilliusADF-LF/m/n/12 ” \OT1/cmr/m/n/12 ,
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.215 ...erger with Total Mass 190-265 $M_^^c3^^b8
+l.216 ...erger with Total Mass 190-265 $M_^^c3^^b8
                                                   dot$”, arXiv:2507.08219.
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -699,12 +699,12 @@ so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
 
-LaTeX Warning: Command \o invalid in math mode on input line 215.
+LaTeX Warning: Command \o invalid in math mode on input line 216.
 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.215 ...r with Total Mass 190-265 $M_^^c3^^b8dot$
+l.216 ...r with Total Mass 190-265 $M_^^c3^^b8dot$
                                                   ”, arXiv:2507.08219.
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -713,19 +713,19 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 ! Not two-byte family.
-l.222 ...om the Coalescence of a 2.5–4.5 M $_⊙
+l.223 ...om the Coalescence of a 2.5–4.5 M $_⊙
                                                   $ Compact Object and a Neu...
 IGNORE.
 
 [7] [8]
-Underfull \hbox (badness 2401) in paragraph at lines 235--236
+Underfull \hbox (badness 2401) in paragraph at lines 236--237
 \JY2/GilliusADF-LF/m/n/12 “\OT1/cmr/m/n/12 Search for Grav-i-ta-tional Waves 
 As-so-ci-ated with Fast Ra-dio Bursts De-tected by
  []
 
 [9] [10] [11] [12]
 ! Misplaced alignment tab character &.
-l.301 &
+l.302 &
         16th Edoardo Amaldi Conference on Gravitational Waves, Glasgow, UK, ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -736,7 +736,7 @@ might try typing `S' now just to see what is salvageable.
 
 [13] [14] [15]
 ! Misplaced alignment tab character &.
-l.364 ...dition”, Akihabara UDX Event, Concept &
+l.365 ...dition”, Akihabara UDX Event, Concept &
                                                    Planning, October 2023.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -767,4 +767,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  72i,9n,79p,899b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on cv.dvi (16 pages, 80192 bytes).
+Output written on cv.dvi (16 pages, 80328 bytes).
