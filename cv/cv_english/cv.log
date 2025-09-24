@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  21 SEP 2025 23:10
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  24 SEP 2025 21:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -677,19 +677,19 @@ ine 181.
 LaTeX Font Info:    Font shape `OT1/GilliusADF-LF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 181.
 
-Underfull \hbox (badness 2671) in paragraph at lines 188--189
+Underfull \hbox (badness 2671) in paragraph at lines 189--190
 \OT1/cmr/m/n/12 Ob-ser-va-tions of Quasi-Periodic Erup-tions with X-rays and Gr
 av-i-ta-tional Waves\JY2/GilliusADF-LF/m/n/12 ” \OT1/cmr/m/n/12 ,
  []
 
 [4] [5] [6]
-Underfull \hbox (badness 1412) in paragraph at lines 212--213
+Underfull \hbox (badness 1412) in paragraph at lines 213--214
 \OT1/cmr/m/n/12 in-ves-ti-ga-tion of a loud gravitational-wave sig-nal ob-serve
 d with a sin-gle de-tec-tor\JY2/GilliusADF-LF/m/n/12 ” \OT1/cmr/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 3439) in paragraph at lines 217--218
+Underfull \hbox (badness 3439) in paragraph at lines 218--219
 \OT1/cmr/m/n/12 4.0: Meth-ods for Iden-ti-fy-ing and Char-ac-ter-iz-ing Gravita
 tional-wave Tran-sients\JY2/GilliusADF-LF/m/n/12 ” \OT1/cmr/m/n/12 ,
  []
@@ -697,7 +697,7 @@ tional-wave Tran-sients\JY2/GilliusADF-LF/m/n/12 ” \OT1/cmr/m/n/12 ,
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.221 ...erger with Total Mass 190-265 $M_^^c3^^b8
+l.222 ...erger with Total Mass 190-265 $M_^^c3^^b8
                                                   dot$”, arXiv:2507.08219.
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -705,12 +705,12 @@ so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
 
-LaTeX Warning: Command \o invalid in math mode on input line 221.
+LaTeX Warning: Command \o invalid in math mode on input line 222.
 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.221 ...r with Total Mass 190-265 $M_^^c3^^b8dot$
+l.222 ...r with Total Mass 190-265 $M_^^c3^^b8dot$
                                                   ”, arXiv:2507.08219.
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -720,19 +720,19 @@ my insertion and my current dilemma will both disappear.
 
 [7]
 ! Not two-byte family.
-l.228 ...om the Coalescence of a 2.5–4.5 M $_⊙
+l.229 ...om the Coalescence of a 2.5–4.5 M $_⊙
                                                   $ Compact Object and a Neu...
 IGNORE.
 
 [8]
-Underfull \hbox (badness 2401) in paragraph at lines 241--242
+Underfull \hbox (badness 2401) in paragraph at lines 242--243
 \JY2/GilliusADF-LF/m/n/12 “\OT1/cmr/m/n/12 Search for Grav-i-ta-tional Waves 
 As-so-ci-ated with Fast Ra-dio Bursts De-tected by
  []
 
 [9] [10] [11] [12]
 ! Misplaced alignment tab character &.
-l.307 &
+l.308 &
         16th Edoardo Amaldi Conference on Gravitational Waves, Glasgow, UK, ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -743,7 +743,7 @@ might try typing `S' now just to see what is salvageable.
 
 [13] [14] [15]
 ! Misplaced alignment tab character &.
-l.370 ...dition”, Akihabara UDX Event, Concept &
+l.371 ...dition”, Akihabara UDX Event, Concept &
                                                    Planning, October 2023.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -774,4 +774,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  72i,9n,79p,899b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on cv.dvi (16 pages, 82640 bytes).
+Output written on cv.dvi (16 pages, 83148 bytes).
