@@ -1,5 +1,6 @@
 # scripts/generate_cv_japanese.py
 from pathlib import Path
+import re
 import bibtexparser
 from bibtexparser.bparser import BibTexParser
 from bibtexparser.customization import convert_to_unicode
@@ -16,7 +17,7 @@ bib_collab = Path("bib/collaboration.bib")
 bib_presentations = Path("bib/presentations.bib")
 bib_activities = Path("bib/activities_jap.bib")
 
-# ---------- 月名の日本語変換 ----------
+# ---------- 月名 ----------
 month_map = {
     "1": "1月", "01": "1月", "jan": "1月",
     "2": "2月", "02": "2月", "feb": "2月",
@@ -40,14 +41,48 @@ def get_sort_key(entry):
         month = eprint[2:4]
     else:
         year = entry.get("year", "1900")
-        month = entry.get("month", "01").lower()
-        month = month_map.get(month, "01").replace("月", "")
+        month_raw = entry.get("month", "01").lower()
+        month = month_map.get(month_raw, "1月").replace("月", "")
+        if len(month) == 1:
+            month = "0" + month
     try:
         return datetime.strptime(f"{year}-{month}", "%Y-%m")
-    except:
+    except Exception:
         return datetime.min
 
+# ---------- LaTeX文字列整形 ----------
+def sanitize_latex_text(text: str) -> str:
+    if not text:
+        return ""
+
+    s = text.strip()
+
+    # 改行・空白の正規化
+    s = s.replace("\r\n", " ").replace("\n", " ")
+    s = s.replace("\u00A0", " ")
+    s = s.replace("\u2009", " ")
+    s = s.replace("\u202F", " ")
+    s = re.sub(r"[ \t]+", " ", s)
+
+    # Bib/LaTeX由来の一部表記整理
+    s = s.replace(r"\textquoteright{}", "'")
+    s = s.replace(r"\textquoteright", "'")
+
+    # Unicode dash を LaTeX 寄りに揃える
+    s = s.replace("–", "--")
+    s = s.replace("—", "---")
+
+    # 太陽質量表記の正規化
+    # M$_{⊙}$, M $_{⊙}$, M$_⊙$, M $_⊙$ -> $M_{\odot}$
+    s = re.sub(r"M\s*\$_\{?⊙\}?\$", r"$M_{\\odot}$", s)
+
+    # tabular / alignment 内で壊れる & を escape
+    s = re.sub(r"(?<!\\)&", r"\\&", s)
+
+    return s
+
 def format_authors_latex(raw):
+    raw = sanitize_latex_text(raw)
     authors = [a.strip() for a in raw.replace("\n", " ").split(" and ")]
     result = []
     for a in authors:
@@ -77,56 +112,55 @@ def generate_section(title, entries, formatter):
     return tex
 
 def format_publication(entry):
-    title = entry.get("title", "").strip("{}")
-    year = entry.get("year", "")
-    doi = entry.get("doi", "")
-    arxiv = entry.get("eprint", "")
-    url = entry.get("url", "")
-    volume = entry.get("volume", "")
-    pages = entry.get("pages", "")
-    journal = entry.get("journal", "")
-    publisher = entry.get("publisher", "")
-    date = entry.get("date", "")
+    title = sanitize_latex_text(entry.get("title", "").strip("{}"))
+    year = sanitize_latex_text(entry.get("year", ""))
+    doi = sanitize_latex_text(entry.get("doi", ""))
+    arxiv = sanitize_latex_text(entry.get("eprint", ""))
+    volume = sanitize_latex_text(entry.get("volume", ""))
+    pages = sanitize_latex_text(entry.get("pages", ""))
+    journal = sanitize_latex_text(entry.get("journal", ""))
+    publisher = sanitize_latex_text(entry.get("publisher", ""))
+    date = sanitize_latex_text(entry.get("date", ""))
     author = format_authors_latex(entry.get("author", ""))
     entry_type = entry.get("ENTRYTYPE", "")
 
     if entry.get("keywords", "").strip() == "collaboration":
-        collab = entry.get("collaboration", "Collaboration")
+        collab = sanitize_latex_text(entry.get("collaboration", "Collaboration"))
         author = f"{collab} Collaboration (including \\uline{{Hiroki Takeda}})"
 
     if entry_type == "book":
         return f"\\item {author}, “{title}”, {publisher}, {date}, {pages}頁."
 
-    elif journal:
+    if journal:
         parts = f"{journal}, {volume}, {pages} ({year})" if volume else f"{journal} ({year})"
         links = []
         if arxiv:
             links.append(f"arXiv:{arxiv}")
         if doi:
             links.append(f"DOI: {doi}")
-        return f"\\item {author}, “{title}”, {parts}. {'; '.join(links)}"
+        tail = f" {'; '.join(links)}" if links else ""
+        return f"\\item {author}, “{title}”, {parts}.{tail}"
 
-    elif arxiv:
+    if arxiv:
         return f"\\item {author}, “{title}”, arXiv:{arxiv}."
 
-    else:
-        return f"\\item {author}, “{title}”, {year}."
+    return f"\\item {author}, “{title}”, {year}."
 
 def format_presentation(entry):
     author = format_authors_latex(entry.get("author", ""))
-    title = entry.get("title", "").strip("{}")
-    book = entry.get("booktitle", "")
-    address = entry.get("address", "")
-    year = entry.get("year", "")
+    title = sanitize_latex_text(entry.get("title", "").strip("{}"))
+    book = sanitize_latex_text(entry.get("booktitle", ""))
+    address = sanitize_latex_text(entry.get("address", ""))
+    year = sanitize_latex_text(entry.get("year", ""))
     month = month_map.get(entry.get("month", "").lower(), "")
     date = f"{year}年{month}" if month else f"{year}年"
     return f"\\item {author}, “{title}”, {book}, {address}, {date}."
 
 def format_activity(entry):
-    title = entry.get("title", "").strip("{}")
-    org = entry.get("organization", "")
-    how = entry.get("howpublished", "")
-    year = entry.get("year", "")
+    title = sanitize_latex_text(entry.get("title", "").strip("{}"))
+    org = sanitize_latex_text(entry.get("organization", ""))
+    how = sanitize_latex_text(entry.get("howpublished", ""))
+    year = sanitize_latex_text(entry.get("year", ""))
     month = month_map.get(entry.get("month", "").lower(), "")
     date = f"{year}年{month}" if month else f"{year}年"
     return f"\\item “{title}”, {org}, {how}, {date}."
@@ -224,13 +258,13 @@ total_outreach = sum(outreach_counts.values())
 # ---------- 指標セクションを生成 ----------
 latex_metrics = f"""
 \\noindent
-\\textbf{{出版物:}}  著書{count_books}, 主著論文{count_short}報, 共著論文{count_collab}報, 合計{total_pubs}報.\\\\
+\\textbf{{出版物:}} 著書{count_books}, 主著論文{count_short}報, 共著論文{count_collab}報, 合計{total_pubs}報.\\\\
 
-\\noindent 
+\\noindent
 \\textbf{{講演:}} 招待セミナー{pres_counts["invited"]}. 国際会議: 口頭発表{pres_counts["int_oral"]}, ポスター発表{pres_counts["int_poster"]}. 国内会議: 口頭発表{pres_counts["dom_oral"]}, ポスター発表{pres_counts["dom_poster"]}.\\\\
 \\hspace{{0.8cm}}合計{total_pres}. \\\\
 
-\\noindent 
+\\noindent
 \\textbf{{アウトリーチ活動:}} 講演{outreach_counts["lecture"]}. メディア出演{outreach_counts["appearance"]}. 執筆{outreach_counts["writing"]}. 取材{outreach_counts["interview"]}. その他{outreach_counts["others"]}.\\\\
 \\hspace{{2.75cm}}合計{total_outreach}. \\\\
 """
@@ -243,10 +277,10 @@ filled = template
 filled = insert_between(filled, "%BEGIN_PUBLICATIONS%", "%END_PUBLICATIONS%", latex_publications)
 filled = insert_between(filled, "%BEGIN_PRESENTATIONS%", "%END_PRESENTATIONS%", latex_presentations)
 filled = insert_between(filled, "%BEGIN_ACTIVITIES%", "%END_ACTIVITIES%", latex_activities)
-filled = filled.replace(r'\textquoteright', "'")
-
-# `\section*{指標}` のマーカーと置換
 filled = insert_between(filled, "%BEGIN_METRICS%", "%END_METRICS%", latex_metrics)
+
+filled = filled.replace(r"\textquoteright{}", "'")
+filled = filled.replace(r"\textquoteright", "'")
 
 output_path.parent.mkdir(parents=True, exist_ok=True)
 with open(output_path, "w", encoding="utf-8") as f:
@@ -254,11 +288,12 @@ with open(output_path, "w", encoding="utf-8") as f:
 
 print("✅ 完全なLaTeXファイルが生成されました:", output_path)
 
-def compile_latex(tex_path):
+def compile_latex(tex_path: Path):
     try:
         subprocess.run(
             [
                 "latexmk",
+                "-gg",
                 "-pdfdvi",
                 "-e", "$latex = 'uplatex -interaction=nonstopmode'",
                 "-e", "$dvipdf = 'dvipdfmx %O -o %D %S'",
@@ -268,9 +303,18 @@ def compile_latex(tex_path):
             cwd=tex_path.parent,
             check=True
         )
-        print("✅ PDF生成完了:", tex_path.with_suffix(".pdf"))
+        pdf_path = tex_path.with_suffix(".pdf")
+        if pdf_path.exists():
+            print("✅ PDF生成完了:", pdf_path)
+        else:
+            print("❌ PDFが生成されませんでした。")
     except subprocess.CalledProcessError:
-        print("❌ LaTeXコンパイル失敗！")
+        print("❌ LaTeXコンパイル中にエラーが発生しました。PDFが生成されていても内容が不完全な可能性があります。")
+        pdf_path = tex_path.with_suffix(".pdf")
+        if pdf_path.exists():
+            print("⚠️ PDF生成済み:", pdf_path)
+        else:
+            print("❌ PDFも生成されていません。")
 
 # 実行
 compile_latex(output_path)
