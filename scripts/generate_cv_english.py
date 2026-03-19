@@ -1,5 +1,6 @@
-# scripts/generate_cv_japanese.py
+# scripts/generate_cv_english.py
 from pathlib import Path
+import re
 import bibtexparser
 from bibtexparser.bparser import BibTexParser
 from bibtexparser.customization import convert_to_unicode
@@ -16,7 +17,7 @@ bib_collab = Path("bib/collaboration.bib")
 bib_presentations = Path("bib/presentations.bib")
 bib_activities = Path("bib/activities_eng.bib")
 
-# ---------- 月名の日本語変換 ----------
+# ---------- 月名 ----------
 month_map = {
     "1": "January", "01": "January", "jan": "January",
     "2": "February", "02": "February", "feb": "February",
@@ -29,7 +30,7 @@ month_map = {
     "9": "September", "09": "September", "sep": "September",
     "10": "October", "oct": "October",
     "11": "November", "nov": "November",
-    "12": "December", "dec": "December"
+    "12": "December", "dec": "December",
 }
 
 # ---------- ソート ----------
@@ -40,14 +41,54 @@ def get_sort_key(entry):
         month = eprint[2:4]
     else:
         year = entry.get("year", "1900")
-        month = entry.get("month", "01").lower()
-        month = month_map.get(month, "01").replace("月", "")
+        month_raw = entry.get("month", "01").lower()
+        month_name = month_map.get(month_raw)
+        month_num_map = {
+            "January": "01", "February": "02", "March": "03", "April": "04",
+            "May": "05", "June": "06", "July": "07", "August": "08",
+            "September": "09", "October": "10", "November": "11", "December": "12",
+        }
+        month = month_num_map.get(month_name, "01")
     try:
         return datetime.strptime(f"{year}-{month}", "%Y-%m")
-    except:
+    except Exception:
         return datetime.min
 
+# ---------- LaTeX文字列整形 ----------
+def sanitize_latex_text(text: str) -> str:
+    if not text:
+        return ""
+
+    s = text.strip()
+
+    # 改行・空白の正規化
+    s = s.replace("\r\n", " ").replace("\n", " ")
+    s = s.replace("\u00A0", " ")   # no-break space
+    s = s.replace("\u2009", " ")   # thin space
+    s = s.replace("\u202F", " ")   # narrow no-break space
+    s = re.sub(r"[ \t]+", " ", s)
+
+    # Bib/LaTeX 由来の一部コマンド整理
+    s = s.replace(r"\textquoteright{}", "'")
+    s = s.replace(r"\textquoteright", "'")
+
+    # Unicode dash を LaTeX 寄りに揃える
+    s = s.replace("–", "--")
+    s = s.replace("—", "---")
+
+    # 太陽質量表記の正規化
+    # 例:
+    #   M$_{⊙}$, M $_{⊙}$, M$_⊙$, M $_⊙$
+    # を $M_{\odot}$ に統一
+    s = re.sub(r"M\s*\$_\{?⊙\}?\$", r"$M_{\\odot}$", s)
+
+    # tabular 内で壊れる & を escape（既に \& のものは保持）
+    s = re.sub(r"(?<!\\)&", r"\\&", s)
+
+    return s
+
 def format_authors_latex(raw):
+    raw = sanitize_latex_text(raw)
     authors = [a.strip() for a in raw.replace("\n", " ").split(" and ")]
     result = []
     for a in authors:
@@ -77,56 +118,55 @@ def generate_section(title, entries, formatter):
     return tex
 
 def format_publication(entry):
-    title = entry.get("title", "").strip("{}")
-    year = entry.get("year", "")
-    doi = entry.get("doi", "")
-    arxiv = entry.get("eprint", "")
-    url = entry.get("url", "")
-    volume = entry.get("volume", "")
-    pages = entry.get("pages", "")
-    journal = entry.get("journal", "")
-    publisher = entry.get("publisher", "")
-    date = entry.get("date", "")
+    title = sanitize_latex_text(entry.get("title", "").strip("{}"))
+    year = sanitize_latex_text(entry.get("year", ""))
+    doi = sanitize_latex_text(entry.get("doi", ""))
+    arxiv = sanitize_latex_text(entry.get("eprint", ""))
+    volume = sanitize_latex_text(entry.get("volume", ""))
+    pages = sanitize_latex_text(entry.get("pages", ""))
+    journal = sanitize_latex_text(entry.get("journal", ""))
+    publisher = sanitize_latex_text(entry.get("publisher", ""))
+    date = sanitize_latex_text(entry.get("date", ""))
     author = format_authors_latex(entry.get("author", ""))
     entry_type = entry.get("ENTRYTYPE", "")
 
     if entry.get("keywords", "").strip() == "collaboration":
-        collab = entry.get("collaboration", "Collaboration")
+        collab = sanitize_latex_text(entry.get("collaboration", "Collaboration"))
         author = f"{collab} Collaboration (including \\uline{{Hiroki Takeda}})"
 
     if entry_type == "book":
         return f"\\item {author}, “{title}”, {publisher}, {date}, {pages} pages."
 
-    elif journal:
+    if journal:
         parts = f"{journal}, {volume}, {pages} ({year})" if volume else f"{journal} ({year})"
         links = []
         if arxiv:
             links.append(f"arXiv:{arxiv}")
         if doi:
             links.append(f"DOI: {doi}")
-        return f"\\item {author}, “{title}”, {parts}. {'; '.join(links)}"
+        tail = f" {'; '.join(links)}" if links else ""
+        return f"\\item {author}, “{title}”, {parts}.{tail}"
 
-    elif arxiv:
+    if arxiv:
         return f"\\item {author}, “{title}”, arXiv:{arxiv}."
 
-    else:
-        return f"\\item {author}, “{title}”, {year}."
+    return f"\\item {author}, “{title}”, {year}."
 
 def format_presentation(entry):
     author = format_authors_latex(entry.get("author", ""))
-    title = entry.get("title", "").strip("{}")
-    book = entry.get("booktitle", "")
-    address = entry.get("address", "")
-    year = entry.get("year", "")
+    title = sanitize_latex_text(entry.get("title", "").strip("{}"))
+    book = sanitize_latex_text(entry.get("booktitle", ""))
+    address = sanitize_latex_text(entry.get("address", ""))
+    year = sanitize_latex_text(entry.get("year", ""))
     month = month_map.get(entry.get("month", "").lower(), "")
     date = f"{month} {year}" if month else f"{year}"
     return f"\\item {author}, “{title}”, {book}, {address}, {date}."
 
 def format_activity(entry):
-    title = entry.get("title", "").strip("{}")
-    org = entry.get("organization", "")
-    how = entry.get("howpublished", "")
-    year = entry.get("year", "")
+    title = sanitize_latex_text(entry.get("title", "").strip("{}"))
+    org = sanitize_latex_text(entry.get("organization", ""))
+    how = sanitize_latex_text(entry.get("howpublished", ""))
+    year = sanitize_latex_text(entry.get("year", ""))
     month = month_map.get(entry.get("month", "").lower(), "")
     date = f"{month} {year}" if month else f"{year}"
     return f"\\item “{title}”, {org}, {how}, {date}."
@@ -136,7 +176,7 @@ def insert_between(text, begin_marker, end_marker, content):
     end = text.find(end_marker)
     if start == -1 or end == -1:
         raise ValueError("マーカーが見つかりません")
-    return text[:start + len(begin_marker)] + "\n" + content + "\n" + text[end:]
+    return text[: start + len(begin_marker)] + "\n" + content + "\n" + text[end:]
 
 # ---------- 読み込み ----------
 books_db = load_bib(bib_books)
@@ -148,7 +188,7 @@ for e in collab_db.entries:
 categorized = {
     "book": books_db.entries,
     "short": papers_db.entries,
-    "collaboration": collab_db.entries
+    "collaboration": collab_db.entries,
 }
 for k in categorized:
     categorized[k].sort(key=get_sort_key, reverse=True)
@@ -165,7 +205,7 @@ presentation_categories = {
     "int_oral": "International Conferences (Oral)",
     "int_poster": "International Conferences (Poster)",
     "dom_oral": "Domestic Conferences (Oral)",
-    "dom_poster": "Domestic Conferences (Poster)"
+    "dom_poster": "Domestic Conferences (Poster)",
 }
 latex_presentations = ""
 for key, title in presentation_categories.items():
@@ -181,7 +221,7 @@ activity_categories = {
     "writing": "Writing",
     "interview": "Interviews",
     "others": "Others",
-    "notes": "Notes"
+    "notes": "Notes",
 }
 latex_activities = ""
 for key, title in activity_categories.items():
@@ -207,7 +247,7 @@ pres_counts = {
     "int_oral": count_entries(pres_db.entries, "int_oral"),
     "int_poster": count_entries(pres_db.entries, "int_poster"),
     "dom_oral": count_entries(pres_db.entries, "dom_oral"),
-    "dom_poster": count_entries(pres_db.entries, "dom_poster")
+    "dom_poster": count_entries(pres_db.entries, "dom_poster"),
 }
 total_pres = sum(pres_counts.values())
 
@@ -217,7 +257,7 @@ outreach_counts = {
     "appearance": count_entries(act_db.entries, "appearance"),
     "writing": count_entries(act_db.entries, "writing"),
     "interview": count_entries(act_db.entries, "interview"),
-    "others": count_entries(act_db.entries, "others")
+    "others": count_entries(act_db.entries, "others"),
 }
 total_outreach = sum(outreach_counts.values())
 
@@ -226,11 +266,11 @@ latex_metrics = f"""
 \\noindent
 \\textbf{{Publications:}} {count_books} book(s), {count_short} first-author paper(s), {count_collab} collaboration paper(s), total {total_pubs}.\\\\
 
-\\noindent 
+\\noindent
 \\textbf{{Presentations:}} Invited talks {pres_counts["invited"]}. International: oral {pres_counts["int_oral"]}, poster {pres_counts["int_poster"]}.\\\\
 \\hspace{{0.8cm}}Total: {total_pres}. \\\\
 
-\\noindent 
+\\noindent
 \\textbf{{Outreach:}} Lectures {outreach_counts["lecture"]}. Media appearances {outreach_counts["appearance"]}. Writing {outreach_counts["writing"]}. Interviews {outreach_counts["interview"]}. Others {outreach_counts["others"]}.\\\\
 \\hspace{{2.75cm}}Total: {total_outreach}. \\\\
 """
@@ -243,10 +283,11 @@ filled = template
 filled = insert_between(filled, "%BEGIN_PUBLICATIONS%", "%END_PUBLICATIONS%", latex_publications)
 filled = insert_between(filled, "%BEGIN_PRESENTATIONS%", "%END_PRESENTATIONS%", latex_presentations)
 filled = insert_between(filled, "%BEGIN_ACTIVITIES%", "%END_ACTIVITIES%", latex_activities)
-filled = filled.replace(r'\textquoteright', "'")
-
-# `\section*{指標}` のマーカーと置換
 filled = insert_between(filled, "%BEGIN_METRICS%", "%END_METRICS%", latex_metrics)
+
+# テンプレート全体に対しても最低限の正規化
+filled = filled.replace(r"\textquoteright{}", "'")
+filled = filled.replace(r"\textquoteright", "'")
 
 output_path.parent.mkdir(parents=True, exist_ok=True)
 with open(output_path, "w", encoding="utf-8") as f:
@@ -254,20 +295,20 @@ with open(output_path, "w", encoding="utf-8") as f:
 
 print("✅ 完全なLaTeXファイルが生成されました:", output_path)
 
-def compile_latex(tex_path):
+def compile_latex(tex_path: Path):
     try:
         subprocess.run(
             [
                 "latexmk",
-                "-gg",  # ←強制再ビルド
+                "-gg",
                 "-pdfdvi",
                 "-e", "$latex = 'uplatex -interaction=nonstopmode'",
                 "-e", "$dvipdf = 'dvipdfmx %O -o %D %S'",
                 "-f",
-                str(tex_path.name)
+                str(tex_path.name),
             ],
             cwd=tex_path.parent,
-            check=True
+            check=True,
         )
         pdf_path = tex_path.with_suffix(".pdf")
         if pdf_path.exists():
@@ -275,10 +316,10 @@ def compile_latex(tex_path):
         else:
             print("❌ PDFが生成されませんでした。")
     except subprocess.CalledProcessError:
-        print("⚠️ LaTeXコンパイルに警告または軽微なエラーがありますが、PDFは生成された可能性があります。")
+        print("❌ LaTeXコンパイル中にエラーが発生しました。PDFが生成されていても内容が不完全な可能性があります。")
         pdf_path = tex_path.with_suffix(".pdf")
         if pdf_path.exists():
-            print("✅ PDF生成済み:", pdf_path)
+            print("⚠️ PDF生成済み:", pdf_path)
         else:
             print("❌ PDFも生成されていません。")
 

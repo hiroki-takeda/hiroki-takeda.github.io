@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  19 MAR 2026 17:47
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  19 MAR 2026 18:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -696,46 +696,13 @@ Underfull \hbox (badness 3439) in paragraph at lines 232--233
 tional-wave Tran-sients\JY2/GilliusADF-LF/m/n/12 ” \OT1/cmr/m/n/12 ,
  []
 
-! Not two-byte family.
-l.236 ...e Merger with Total Mass 190–265 M$_⊙
-                                                  $”, Astrophys. J. Lett.,...
-IGNORE.
-
-[8]
-! Not two-byte family.
-l.243 ...om the Coalescence of a 2.5–4.5 M $_⊙
-                                                  $ Compact Object and a Neu...
-IGNORE.
-
-[9]
-Underfull \hbox (badness 2401) in paragraph at lines 256--257
+[8] [9]
+Underfull \hbox (badness 2401) in paragraph at lines 257--258
 \JY2/GilliusADF-LF/m/n/12 “\OT1/cmr/m/n/12 Search for Grav-i-ta-tional Waves 
 As-so-ci-ated with Fast Ra-dio Bursts De-tected by
  []
 
-[10] [11] [12] [13]
-! Misplaced alignment tab character &.
-l.326 &
-        16th Edoardo Amaldi Conference on Gravitational Waves, Glasgow, UK, ...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-[14] [15] [16]
-! Misplaced alignment tab character &.
-l.391 ...dition”, Akihabara UDX Event, Concept &
-                                                   Planning, October 2023.
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-[17] [18] (./cv.aux)
+[10] [11] [12] [13] [14] [15] [16] [17] [18] (./cv.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -757,4 +724,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  72i,9n,79p,899b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on cv.dvi (18 pages, 91812 bytes).
+Output written on cv.dvi (18 pages, 91712 bytes).
