@@ -25,7 +25,7 @@
     - 活動: `activities_jap.bib` / `activities_eng.bib`
 
 2. BibTeX では管理していない「静的な情報（自己紹介や所属など）」を変更する場合は、以下を直接編集
-    - index.html などの HTML ファイル
+    - index.html, cv.htmlなどの HTML ファイル (publications.html, presentations.html, activities.htmlを除く)
     - templates/cv_template_jap.tex（日本語CV）/ templates/cv_template_eng.tex（英語CV）
 
 3. 以下のコマンドで自動更新＋Git Push を行う：
