@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  25 AUG 2026 18:21
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.4.17)  25 AUG 2026 18:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -557,19 +557,19 @@ LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 11.09619pt on input line 181.
  [4] [5] [6] [7]
-Underfull \hbox (badness 4366) in paragraph at lines 231--232
+Underfull \hbox (badness 4366) in paragraph at lines 232--233
 \OT1/cmr/m/n/10 4.0: Meth-ods for Iden-ti-fy-ing and Char-ac-ter-iz-ing Gravita
 tional-wave Tran-sients\JY2/hmc/m/n/10 ” \OT1/cmr/m/n/10 ,
  []
 
 [8] [9]
-Underfull \hbox (badness 2941) in paragraph at lines 256--257
+Underfull \hbox (badness 2941) in paragraph at lines 257--258
 \JY2/hmc/m/n/10 “\OT1/cmr/m/n/10 Search for Grav-i-ta-tional Waves As-so-ci-a
 ted with Fast Ra-dio Bursts De-tected by
  []
 
 [10]
-Underfull \hbox (badness 1297) in paragraph at lines 269--270
+Underfull \hbox (badness 1297) in paragraph at lines 270--271
 []\OT1/cmr/m/n/10 LIGO Sci-en-tific, Virgo, KA-GRA Col-lab-o-ra-tion (in-clud-i
 ng |   []   |   []),  \JY2/hmc/m/n/10 “\OT1/cmr/m/n/10 All-sky,
  []
@@ -586,10 +586,10 @@ Package rerunfilecheck Info: File `cv.out' has not changed.
 Here is how much of TeX's memory you used:
  11843 strings out of 474762
  180538 string characters out of 5758587
- 1935338 words of memory out of 5000000
+ 1934338 words of memory out of 5000000
  34111 multiletter control sequences out of 15000+600000
  598883 words of font info for 94 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  72i,9n,79p,899b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on cv.dvi (17 pages, 91936 bytes).
+Output written on cv.dvi (17 pages, 92364 bytes).
